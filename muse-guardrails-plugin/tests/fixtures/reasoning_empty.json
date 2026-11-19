@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/decolua/9router/pull/4387",
+  "report_ref": "Section 4 theme 1; family F7 in section 7 (Probable); individually ungraded issue",
+  "synthetic": true,
+  "input": {"response": {"object": "response", "status": "incomplete", "output": [{"type": "reasoning", "summary": []}], "incomplete_details": {"reason": "max_output_tokens"}, "usage": {"output_tokens": 100, "output_tokens_details": {"reasoning_tokens": 97}}}},
+  "expected_codes": ["empty_visible_content", "finish_reason_length", "incomplete_response"]
+}

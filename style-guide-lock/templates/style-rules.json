@@ -1,0 +1,11 @@
+{
+  "name": "house style (example)",
+  "max_sentence_words": 25,
+  "max_paragraph_sentences": 5,
+  "banned_words": ["leverage", "utilize", "synergy", "very", "really", "clearly", "obviously", "cutting-edge", "robust", "seamless", "delve", "game-changer"],
+  "banned_patterns": ["\\bin order to\\b", "\\bit is important to note\\b", "\\bas an AI\\b", "!{2,}"],
+  "required_terms": [],
+  "preferred": {"utilize": "use", "leverage": "use", "in order to": "to", "prior to": "before", "subsequent to": "after"},
+  "passive_voice_max_share": 0.15,
+  "forbid_first_person_plural": false
+}

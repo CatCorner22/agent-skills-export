@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/decolua/9router/issues/4602",
+  "report_ref": "Section 4 theme 2; individually ungraded route mismatch report",
+  "synthetic": true,
+  "input": {"response": {"error": {"message": "unknown parameter input", "type": "invalid_request_error"}}},
+  "expected_codes": ["upstream_error"]
+}

@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/decolua/9router/issues/4736",
+  "report_ref": "Section 4 theme 1; family F7 in section 7 (Probable); individually ungraded issue",
+  "synthetic": true,
+  "input": {"response": {"choices": [{"finish_reason": "stop", "message": {"role": "assistant", "content": "", "reasoning_content": "hidden reasoning is not a visible answer"}}]}},
+  "expected_codes": ["empty_visible_content"]
+}

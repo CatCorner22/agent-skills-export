@@ -1,0 +1,9 @@
+# Evidence scope and provenance
+
+The research/ directory is an unchanged copy of the supplied report.md (sections 1–7), evidence.md, evidence-index.md and knowledge/ snapshots from ~/research-muse, dated 2026-11-10. INPUT_MANIFEST.json records SHA-256 for each of the 74 copied input files. No new Muse inference, connector access, security reproduction or public-issue lifecycle check was performed to build this pack.
+
+The report reuses F-numbering: section 3 has behavioral failure IDs; section 7 maps different Claude-study families. Skills qualify which section they mean. M-numbering belongs to section 7's additional Muse themes. Grades A/B/C/D describe source type, not confidence. Established, Probable, Single-source and Contested are the report's confidence labels; an Established family does not upgrade every underlying anecdote or issue. Section 4 leaves many bug themes individually ungraded; skills retain that limitation while citing the relevant family confidence.
+
+The checklists and numeric stop/checkpoint policies are proposed operating guardrails, not evaluated fixes or measured Muse failure rates. Product, route, version, date and harness differences remain material. The injection/approval findings are contested; there is no demonstrated production unauthorized purchase in the report. Privacy findings about the personal agent must not be silently applied to bare API storage. Historical feature availability and prices must be rechecked before relying on them.
+
+The supplied source notes may link to historical artifacts outside this compact snapshot; raw captures and the original Claude study DOCX are not bundled. The pack's own SKILL links resolve within the bundle. No generic skill is reimplemented or bundled; skill: references point to the user's existing library. There are exactly eight activation skills and no pack-index skill or README.
