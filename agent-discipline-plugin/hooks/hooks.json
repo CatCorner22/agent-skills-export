@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [{"hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook reinject"}]}],
+    "PostCompact": [{"hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook reinject"}]}],
+    "PreToolUse": [
+      {"matcher": "Bash|WebFetch", "hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook fetch-guard"}]},
+      {"matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit", "hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook scope-fence"}]},
+      {"matcher": "Bash", "hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook validate-call"}]},
+      {"matcher": "Read", "hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook read-cache"}]}
+    ],
+    "PostToolUse": [
+      {"matcher": "Read", "hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook record-read"}]},
+      {"matcher": "Bash|Grep|Glob|WebFetch|WebSearch", "hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook log-trim"}]}
+    ],
+    "Stop": [{"hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/lib/ad.py\" hook completion-gate"}]}]
+  }
+}

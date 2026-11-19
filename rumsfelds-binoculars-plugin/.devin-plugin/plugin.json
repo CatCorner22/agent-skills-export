@@ -1,0 +1,5 @@
+{
+  "name": "rumsfelds-binoculars",
+  "version": "1.0.0",
+  "description": "Rumsfeld's Binoculars. Risk reconnaissance that sorts a plan into known knowns, known unknowns, unknown knowns, and unknown unknowns, then hunts black swans and other high-consequence, low-frequency events with adversarial models and tail statistics."
+}

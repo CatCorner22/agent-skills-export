@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "chicken-little-overwatch-plugin",
+  "version": "2.0.0",
+  "description": "Chicken Little Overwatch Plugin. Model-agnostic quality control for work that an AI helped produce: requirement, evidence, and execution checks; a plain-language, active-voice writing standard (Ken Adams style, R1-R30 rubric); and an adversarial red-team swarm whose alarms a Defender and an Arbiter test against the evidence.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "quality-control",
+    "red-team",
+    "plain-language",
+    "active-voice",
+    "fact-check",
+    "proofreading",
+    "llm-review"
+  ]
+}

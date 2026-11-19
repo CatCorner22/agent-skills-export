@@ -1,0 +1,7 @@
+scenario,probability,impact,reversible,detectable,evidence
+Key supplier fails,0.05,400000,yes,yes,judgment
+Data breach of patient records,0.02,2500000,no,no,judgment
+Payroll error,0.30,20000,yes,yes,data
+Regulator changes a rule,0.10,150000,yes,yes,judgment
+Building fire,0,3000000,no,yes,guess
+Owner cannot work for 6 months,0.004,900000,no,yes,judgment

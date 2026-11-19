@@ -1,0 +1,15 @@
+---
+description: Run the full Chicken Little Overwatch review (plan, verify, writing standard, checks, red team) on a file, folder, or pasted deliverable
+argument-hint: "[file-or-folder] [tier T1|T2|T3]"
+---
+
+Use the `chicken-little-overwatch` skill to review this target: $ARGUMENTS
+
+If the target above is empty, use the file, folder, or text that the user named in this conversation. If the user named nothing, ask for the artifact and its requirements, and stop.
+
+1. Read the skill's `SKILL.md`. Load each reference only at the step that names it.
+2. Choose the mode and the red-team tier, unless the target names a tier. State both and the reason.
+3. Show the Plan and your Step 2 and Step 3 findings before you rewrite anything. If no one can answer questions, deliver the Plan and the revision together, and mark each open choice `[X#]`.
+4. Complete the remaining steps, and deliver the skill's Output format.
+
+Report only checks that you ran. Do not edit the artifact during Step 7.
