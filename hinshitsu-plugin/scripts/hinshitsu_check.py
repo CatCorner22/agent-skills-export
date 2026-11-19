@@ -109,8 +109,7 @@ def artifact_bases(folder):
 
 def holds_identifier(line, identifier):
     """True when the identifier stands in the line as a whole word."""
-    # Devin prints a session identifier with or without its "devin-" prefix.
-    return re.search(r"(?<![\w-])(?:devin-)?%s(?![\w-])" % re.escape(identifier), line) is not None
+    return re.search(r"(?<![\w-])%s(?![\w-])" % re.escape(identifier), line) is not None
 
 
 PASSED_LINE = re.compile(r"(?:^|[—:;-])\s*`?passed`?\.?$")
@@ -285,8 +284,7 @@ def check(folder, stage):
         cited_reports.append(report.group(1))
         lines = (folder / report.group(1)).read_text(encoding="utf-8").splitlines()
         first = lines[0] if lines else ""
-        # Devin prints a session identifier with or without its "devin-" prefix.
-        bare = ident[len("devin-"):] if ident and ident.startswith("devin-") else ident
+        bare = ident
         if re.match(r"\W*DEGRADED\b", first):  # any separator after the word (rule 21.2)
             degraded_reports.append(report.group(1))
             if not any((field(c["body"], "Mode") or "").startswith("DEGRADED") for c in by_type.get("CAPABILITY", [])):

@@ -2,7 +2,11 @@
   "built_at": "2026-11-10T19:10:19.375872+00:00",
   "files": [
     {
-      "path": ".devin-plugin/plugin.json",
+      "path": "install-muse.sh",
+      "sha256": "d66610088156372dec27cb15f40977fe94bb5cf302013d2cc5218ee2ebf58b56"
+    },
+    {
+      "path": "plugin.json",
       "sha256": "900f603fdc758c2fea7285674af8fb9f2638bb939a51f1b0fbf2e56451dcdb82"
     },
     {
@@ -311,7 +315,7 @@
     },
     {
       "path": "scripts/build_dist.py",
-      "sha256": "d5660f418ec8a95108766ed023ab34fcaa656a000eec380942f70a05b3ca34e2"
+      "sha256": "bd704d3cfb6422c4a98c3ec4a27dbdfd728eea3fad9d16cefa87d4670e838cc2"
     },
     {
       "path": "skills/muse-abstention-recovery/SKILL.md",

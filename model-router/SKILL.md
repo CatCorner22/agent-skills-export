@@ -5,7 +5,7 @@ description: "Choose which model gets a task from how the output will be verifie
 
 # Model router
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 More than one model is available and the task has not been assigned.

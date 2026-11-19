@@ -24,7 +24,7 @@ def build(destination):
         raise ValueError('Destination must be outside source and its ancestors')
     if not destination.parent.is_dir():
         raise ValueError('Destination parent must already exist')
-    if destination.exists() and not (destination / '.devin-plugin/plugin.json').is_file():
+    if destination.exists() and not (destination / 'plugin.json').is_file():
         raise ValueError('Refusing to replace a non-plugin directory')
     with tempfile.TemporaryDirectory(prefix=destination.name + '-build-', dir=destination.parent) as temporary:
         stage = Path(temporary) / 'snapshot'

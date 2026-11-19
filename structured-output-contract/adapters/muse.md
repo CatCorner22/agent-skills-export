@@ -6,9 +6,8 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes (F1 to F15)
 
 ## Install
 
-- Run `muse skills install ./structured-output-contract --scope user`, or copy the whole folder to `~/.agents/skills/structured-output-contract/` (user) or `.agents/skills/structured-output-contract/` (project). Keep `scripts/` beside `SKILL.md`.
-- Muse Code may not surface project skills (t3code#19155). Add 1 line to the project's `AGENTS.md`: "When a model must return JSON or another fixed format, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
-- Run `muse skills validate` on the folder and fix every error it reports.
+- Install the whole `structured-output-contract` folder with `muse skills install ./structured-output-contract --scope user`, or copy it to `<repo>/.agents/skills/structured-output-contract/`. Check it first with `muse skills validate ./structured-output-contract`. Keep `scripts/` beside `SKILL.md`.
+- Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. To load this skill every time, add 1 line to the project's `AGENTS.md`: "When a model must return JSON or another fixed format, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
 
 ## Tool mapping
 
@@ -22,4 +21,4 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes (F1 to F15)
 2. **Strip tool markup.** Muse can print tool-call markup as text (item 3). Treat it as a failed reply, not data.
 3. **Treat empty `content` as a failure** and retry with a larger `max_tokens` (item 1).
 4. **Confirm every script ran.** On Muse Code, tool calls sometimes come out as plain text and never run (section 4, item 3). Read the script's output and exit status. If you didn't see output, it didn't run; don't report it as run.
-5. **Use `high` effort if a route rejects `max`** (`reasoning_effort=max` was rejected on one route, hermes#140813; max effort is also slow, F10).
+5. **Use high effort.** At max effort Muse is slow and uses many tokens (F10). Muse Code's default effort is `high` (`--reasoning-effort` or `/effort`), and the Meta provider rejects `none` (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18).

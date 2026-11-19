@@ -5,7 +5,7 @@ description: "Keep any model's answer in the requested language and script when 
 
 # Output language lock
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 The user's language differs from the language of the sources, tools or system prompt, or an answer came back partly in the wrong language.

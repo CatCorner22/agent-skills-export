@@ -5,7 +5,7 @@ description: "Strip over-claiming from a draft before delivery: absolutes, inten
 
 # Restraint pass
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A draft is done and someone will act on it.

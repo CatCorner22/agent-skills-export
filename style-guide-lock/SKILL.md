@@ -5,7 +5,7 @@ description: "Load a house style once as a rules file and check every draft agai
 
 # Style-guide lock
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 Prose must meet a defined style, or you are producing many pieces that should sound alike.

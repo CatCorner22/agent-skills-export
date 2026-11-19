@@ -5,7 +5,7 @@ description: "Write the task to any model as a contract: job, finish line with r
 
 # Task contract
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A model or sub-agent is about to do work longer than one reply, or a previous run drifted, stopped early, guessed at a missing input or kept old instructions alive.

@@ -10,7 +10,7 @@ metadata:
 ---
 # Read manifest
 
-Compaction deletes what you read; the manifest does not. In one measured Codex session, 95% of compactions were followed by re-reading an already-read file. Fix: write what you learned to disk, in a form small enough to reinject.
+Compaction deletes what you read; the manifest does not. In one measured coding-agent session, 95% of compactions were followed by re-reading an already-read file. Fix: write what you learned to disk, in a form small enough to reinject.
 
 ## Protocol
 - **Before a read:** `ad.py manifest check PATH`. UNCHANGED + summary suffices → do not open it. UNCHANGED + need detail → read **only the range** you need. CHANGED → read the changed region (`git diff`, or the range) and update the entry.

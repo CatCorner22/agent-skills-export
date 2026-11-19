@@ -5,7 +5,7 @@ description: "Give any model the date, its training cutoff and the rule that tim
 
 # Temporal grounding
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 Every session, and any draft that says "currently", "latest" or names a year.

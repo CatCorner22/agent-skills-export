@@ -1,7 +1,0 @@
-{
-  "name": "agent-discipline",
-  "version": "1.0.0",
-  "description": "16 skills + 9 deterministic guards against recurring LLM/agent failures: resource blindness, re-read loops, context rot, passivity, over-agency, false 'done', sycophancy, rule neglect, tool misuse, silent assumptions, model drift. Hooks for Claude Code/Devin; CLI (lib/ad.py) for any host.",
-  "author": {"name": "CatCorner22"},
-  "hooks": "./hooks/hooks.json"
-}

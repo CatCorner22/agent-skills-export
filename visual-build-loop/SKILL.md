@@ -5,7 +5,7 @@ description: "Run any vision-capable model in a build, render, compare-to-target
 
 # Visual build loop
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A model builds or checks a web page, dashboard, chart, slide deck, game or 3D scene.

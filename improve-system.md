@@ -12,8 +12,8 @@ This skill is the compounding layer: it takes what has happened (feedback, mista
 ## Where improvements get written
 
 - `knowledge/` — the project knowledge base (see the `ingest-source` skill) for factual updates.
-- Skill files (`.claude/skills/*/SKILL.md` or `~/.claude/skills/*/SKILL.md`) for process improvements.
-- `CLAUDE.md` / project instructions for always-on preferences.
+- Skill files (`.agents/skills/*/SKILL.md` or `~/.agents/skills/*/SKILL.md`) for process improvements.
+- `AGENTS.md` / project instructions for always-on preferences.
 - `knowledge/LEARNINGS.md` — a running log of what was learned and what was changed, one dated entry per improvement session.
 
 ## Modes

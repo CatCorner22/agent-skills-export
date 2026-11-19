@@ -292,7 +292,7 @@ Write the skill's own output in active voice, with consistent terms, and per the
 Use the strongest check available, in this order.
 
 1. **Full checker.** If `active_voice_check.py` exists (in this skill's `scripts/` folder, the workspace, or the user's skill repository), run `python3 active_voice_check.py FILE`. It labels each hit with a code (`PASSIVE`, `GET-PASSIVE`, `PSEUDO`, `CAUSATIVE`, `REDUCED`, `REDUCED?`, `CONCEALED`, `ELLIPTICAL`, `STATE?`, `MANDATED`, or `MENTION`), and it exits with status 1 until no blocking hit remains. Add `--strict` when the file holds only revised text, so that a passive inside italics or quotation marks counts too. If the workspace has spaCy and its `en_core_web_sm` model, the checker adds a dependency-parse pass with that model, the one that the tests measured; `--model NAME` loads another model. In the tests that Test results reports, `en_core_web_trf` raised 1 false alarm on the active sentences, against 2 for the default model, but it ran about 7 times slower. If a spaCy hit proves active under Step 2 (Decide), rewrite the clause anyway, as Workflow Step 8 requires.
-2. **Fallback scan.** If the full checker is absent, save the Python script in this section as `av_scan.py` and run `python3 av_scan.py FILE`. It flags more than it needs to, on purpose; decide each hit with Active Voice Step 2 (Decide).
+2. **Fallback scan.** If the full checker is absent, run `python3 <skill folder>/scripts/av_scan.py FILE`; if that file is missing, save the Python script in this section as `av_scan.py` and run it. It prints a count line and exits with status 1 while any hit remains; it ignores `--strict`. It flags more than it needs to, on purpose; decide each hit with Active Voice Step 2 (Decide).
 3. **Eye check.** In every case, read each heading, label, table cell, question, and noun that a participle follows. No automated check catches every reduced clause.
 
 Mark text that a law requires word for word with `<!-- av:verbatim -->` and `<!-- /av:verbatim -->`. Mark deliberate "before" examples and cited titles with `<!-- av:mention -->` and `<!-- /av:mention -->`. The full checker reports both groups separately instead of hiding them.
@@ -330,10 +330,14 @@ def scan(text):
 
 
 if __name__ == "__main__":
-    for fn in sys.argv[1:]:
+    hits = 0
+    for fn in [a for a in sys.argv[1:] if not a.startswith("--")]:
         for ln, line in enumerate(open(fn, encoding="utf-8"), 1):
             for name, frag in scan(line):
+                hits += 1
                 print(f"{fn}:{ln}: [{name}] {frag.strip()}")
+    print(f"av_scan: {hits} hit(s)")
+    sys.exit(1 if hits else 0)
 ```
 
 Also search for: *shall*, *should*, *consider*, *and/or*, the slash, *within*, *upon*, *until*, *by [date]*, *between*, *business day*, *provided that*, *notwithstanding*, *subject to*, *herein*, *said*, *such*, *such as*, *etc.*, *respectively*, *whichever*, *any*, *each*, *all*, *unless*, *notice*, *may require*, *sole discretion*, *satisfactory*, *please* before a duty, *may* meaning possibility, *likely*, *as needed* without a maximum, *as directed*, the R5 look-alike words, and every abbreviation. To find sentences with 1 space after them, search with the regular expression `[.?!]["”’)]? (?=["“‘(]?[A-Z0-9])`; it also matches an abbreviation inside a sentence (*Dr. Lee*), so check each hit.

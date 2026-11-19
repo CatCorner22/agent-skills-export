@@ -5,7 +5,7 @@ description: "Convert agent skill folders between Claude, Cursor, Codex and Kimi
 
 # Skill format porter
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A skill written for one agent tool must run in another, or a skill fails to load.

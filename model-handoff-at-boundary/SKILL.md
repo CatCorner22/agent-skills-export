@@ -5,7 +5,7 @@ description: "Switch models or providers only at artifact boundaries (a file, di
 
 # Model handoff at boundary
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A conversation on one model is about to continue on another, including a different variant or effort level of the same family.

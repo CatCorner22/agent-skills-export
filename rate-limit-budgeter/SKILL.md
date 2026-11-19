@@ -5,7 +5,7 @@ description: "Plan request rates against any provider's TPM/RPM limits (counting
 
 # Rate limit budgeter
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 Before any concurrent or batch workload, and at the first 429.

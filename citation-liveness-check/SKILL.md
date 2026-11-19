@@ -5,7 +5,7 @@ description: "Verify that the citations in any model-written draft are real, rea
 
 # Citation liveness check
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A draft cites URLs, DOIs or named papers that a reader may follow, and a model produced or reformatted them.

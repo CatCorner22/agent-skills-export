@@ -6,8 +6,7 @@ metadata:
   pathPatterns:
     - '**/SKILL.md'
     - '**/overlay.yaml'
-    - '.cursor/skills/**'
-    - '.claude/skills/**'
+    - '.agents/skills/**'
   bashPatterns:
     - '\baudit_skill_library\.py\b'
   importPatterns: []
@@ -120,7 +119,7 @@ Two consequences drive the whole audit:
 | df ≥ 15 (idf ≤ 1.8) | `user` 27, `vercel` 24, `skill` 23, `app` 18, `whenever` 17, `building` 17, `guidance` 17, `expert` 16, `api` 15 | no discriminative power | never load-bearing; needs a path/import gate |
 | df 8–14 | `build` 14, `models` 12, `create` 11, `deployment` 10, `test` 8 | weak | `allOf` conjunction |
 | df 3–7 | `deploy` 7, `agent` 6, `playwright` 5, `python` 4, `auth` 4, `zerogpu` 3 | usable | pair with one more term |
-| df 1–2 | `supabase` 1, `@cursor/sdk` 1, `storage` 2, `sandbox` 2 | maximal | valid sole trigger |
+| df 1–2 | `supabase` 1, `storage` 2, `sandbox` 2 | maximal | valid sole trigger |
 | df 0 | `streamText`, `cacheComponents` | body-only; never fires | promote into `retrieval.entities` |
 
 No content word clears df 33 here, and `storage` (df 2) outranks `playwright` (df 5) — thresholds copied from another library are wrong. **Rarity and breadth are also orthogonal:** `supabase` has this corpus's maximum idf (4.49) and *"Use when doing ANY task involving Supabase"* is still greedy, because the universal quantifier deletes every conjunction the anchor could have joined. Score both axes; an IDF floor alone reproduces none of the known cases.

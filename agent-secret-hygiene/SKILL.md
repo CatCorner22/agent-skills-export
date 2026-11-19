@@ -5,7 +5,7 @@ description: "Keep credentials out of model reach on any platform: scan the envi
 
 # Agent secret hygiene
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A model or sub-agent will run in an environment, read a prompt, or produce a transcript that could contain credentials.

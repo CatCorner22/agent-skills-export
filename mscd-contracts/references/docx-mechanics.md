@@ -1,6 +1,6 @@
 # Word mechanics for redlines and comments
 
-Read this file in Redline and Comment modes, with the docx skill's own SKILL.md ("Editing existing documents", "Tracked changes", and "Comments"). SKILL.md's Redline steps say what to do; this file says how the markup works. `<docx-skill>` is the docx skill's folder (on claude.ai, usually `/mnt/skills/public/docx`; Muse Code doesn't ship it, so see `adapters/muse.md`).
+Read this file in Redline and Comment modes, with the docx skill's own SKILL.md ("Editing existing documents", "Tracked changes", and "Comments"). SKILL.md's Redline steps say what to do; this file says how the markup works. `<docx-skill>` is the docx skill's folder (`muse skills list` shows it; Muse Code doesn't ship it, so see `adapters/muse.md`).
 
 ## Tracked changes (Redline step 3)
 
@@ -21,7 +21,7 @@ Read this file in Redline and Comment modes, with the docx skill's own SKILL.md 
 
 ## Comments (Comment mode)
 
-- Add each comment with the docx skill's `scripts/comment.py`, passing `--author "Blake's AI Agent" --initials "BAR-AI"` (its defaults are "Claude" and "C"; never BAA).
+- Add each comment with the docx skill's `scripts/comment.py`, passing `--author "Blake's AI Agent" --initials "BAR-AI"` (its own defaults are wrong for Blake; never BAA).
 - Place the markers it prints around the exact words of the finding in `word/document.xml`; a comment without markers doesn't show.
 - For a line break inside 1 comment, pass `--raw` with `</w:t><w:br/><w:t xml:space="preserve">` between lines (a bare `<w:br/>` inside the text fails validation), and escape `&`, `<`, and `>` yourself.
 - Validate the file afterward: `validate.py` with `--original in.docx`, and with `--author "Blake's AI Agent"` when the file is a redline.

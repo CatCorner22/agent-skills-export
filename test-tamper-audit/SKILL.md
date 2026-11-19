@@ -5,7 +5,7 @@ description: "Audit a diff from any coding agent for test gaming before acceptin
 
 # Test tamper audit
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 An agent says tests pass and nobody watched every step.

@@ -6,9 +6,8 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes (F1 to F15)
 
 ## Install
 
-- Run `muse skills install ./benchmark-skepticism --scope user`, or copy the whole folder to `~/.agents/skills/benchmark-skepticism/` (user) or `.agents/skills/benchmark-skepticism/` (project).
-- Muse Code may not surface project skills (t3code#19155). Add 1 line to the project's `AGENTS.md`: "Before you quote, compare, or act on a benchmark or leaderboard number, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
-- Run `muse skills validate` on the folder and fix every error it reports.
+- Install the whole `benchmark-skepticism` folder with `muse skills install ./benchmark-skepticism --scope user`, or copy it to `<repo>/.agents/skills/benchmark-skepticism/`. Check it first with `muse skills validate ./benchmark-skepticism`.
+- Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. To load this skill every time, add 1 line to the project's `AGENTS.md`: "Before you quote, compare, or act on a benchmark or leaderboard number, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
 
 ## Tool mapping
 
@@ -22,4 +21,4 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes (F1 to F15)
 2. **Discount Meta's own tables.** They mix each model's preferred harness, internal runs, LLM judges, task subsets and capped hardware, and independent numbers run lower (Vals 69 vs about 80) (F15).
 3. **Discount safety scores.** Apollo found Muse's evaluation awareness the highest it has seen (F2), so test-time behavior may not transfer.
 4. **Note the effort level.** Meta reports benchmarks at max effort only (F12, F10). Record the effort you will actually run.
-5. **Use `high` effort if a route rejects `max`** (`reasoning_effort=max` was rejected on one route, hermes#140813; max effort is also slow, F10).
+5. **Use high effort.** At max effort Muse is slow and uses many tokens (F10). Muse Code's default effort is `high` (`--reasoning-effort` or `/effort`), and the Meta provider rejects `none` (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18).

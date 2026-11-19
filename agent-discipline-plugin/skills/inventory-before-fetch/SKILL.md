@@ -14,7 +14,7 @@ A file visible in the user's project folder is **not** in your context. Project 
 ## Procedure (run in order; stop at the first hit)
 
 1. **Local state.** `ad.py manifest check <name>` — was it read or fetched this session? If UNCHANGED, use the summary or a line range.
-2. **Product stores.** Call the host's retrieval tool with the filename **and two synonyms** (e.g. `nebula.cram`, `genome`, `Nebula Genomics`): Claude Projects `project_knowledge_search`, ChatGPT file search, Gemini/NotebookLM sources, Devin attachments/knowledge, Cursor `@file`.
+2. **Product stores.** Search Muse Code's project memory with the filename **and two synonyms** (e.g. `nebula.cram`, `genome`, `Nebula Genomics`): the index in `.agents/memory/MEMORY.md` lists file paths only, so open the matching file; in the Meta AI app, check the files attached to the chat.
 3. **Conversation.** Attachments and tool outputs earlier in this thread (and the reinjected manifest after compaction).
 4. **Filesystem.** `ls`/`find`/`glob` by name and by extension in the workspace, downloads, and data dirs.
 

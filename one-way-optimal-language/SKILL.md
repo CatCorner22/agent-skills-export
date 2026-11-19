@@ -10,7 +10,7 @@ This skill adapts Ken Adams's *A Manual of Style for Contract Drafting* (5th ed.
 - **Provider text** (provider-facing): medical ethics codes and statements, institutional policies, procedures and SOPs, checklists, clinical practice guidelines, order sets, consent protocols, clinical notes.
 - **Patient text** (patient-facing): medicine labels and leaflets, discharge instructions, education handouts, consent forms, notices (rights, privacy, language assistance), appointment and billing letters, portal messages.
 
-**On Muse** (Muse Code, Muse Spark, Muse Wonder, or the Meta Model API), read `adapters/muse.md` before Step 1. It maps this skill's tools to Muse. It also adds run rules for Muse's known failure modes: declining instead of answering, drifting after compaction, looping, and reporting a check that never ran.
+**Every run:** read `adapters/muse.md` before Step 1. It maps this skill's tools to Muse. It also adds run rules for Muse's known failure modes: declining instead of answering, drifting after compaction, looping, and reporting a check that never ran.
 
 **Terms.** This skill uses *provider text* and *patient text* for the two classes, and *patient instructions* for the steps that a patient takes in self-care.
 

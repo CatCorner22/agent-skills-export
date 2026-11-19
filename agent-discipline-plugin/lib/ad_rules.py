@@ -2,7 +2,7 @@
 import os, re, sys, json, subprocess
 from ad_core import now
 
-RULE_FILES = ("CLAUDE.md", "AGENTS.md", ".cursorrules", "GEMINI.md", ".windsurfrules", "copilot-instructions.md")
+RULE_FILES = ("AGENTS.md",)  # Muse Code reads AGENTS.md at each level, including .agents/AGENTS.md
 NEG_RE = re.compile(r"\b(never|don't|do not|must not|shouldn't|should not|avoid|no\s+\w+ing)\b", re.I)
 HOOKABLE = [  # (pattern in rule text, regex for command to deny, label)
     (r"rm\s*-rf|delete.*(recursive|files)|remove.*director", r"\\brm\\s+-[a-zA-Z]*r", "recursive delete"),
@@ -20,7 +20,7 @@ def find_rule_files(root="."):
     for dp, dn, fn in os.walk(root):
         dn[:] = [d for d in dn if d not in ("node_modules", ".git", ".venv", "venv", "dist", "build")]
         for f in fn:
-            if f in RULE_FILES or f.endswith(".mdc") and ".cursor" in dp: out.append(os.path.join(dp, f))
+            if f in RULE_FILES: out.append(os.path.join(dp, f))
         if dp.count(os.sep) - root.count(os.sep) > 3: dn[:] = []
     return out
 
@@ -53,8 +53,8 @@ def lint_rules(path, max_lines=150):
     for i in vague: findings.append(f"{path}:{i}: vague rule (no testable trigger/condition).")
     return {"file": path, "lines": len(lines), "findings": findings, "hooks": hooks, "rewrites": rewrites}
 
-def compile_hooks(results, script_path="python3 ${CLAUDE_PLUGIN_ROOT}/lib/ad.py"):
-    """Emit a Claude-format hooks.json fragment with one deny regex per hookable negative rule."""
+def compile_hooks(results, script_path="python3 __AD_ROOT__/lib/ad.py"):
+    """Emit a hooks.json fragment (the form of hooks/hooks.json) with one deny regex per hookable negative rule."""
     patterns = sorted({h["deny_regex"] for r in results for h in r["hooks"] if h["deny_regex"]})
     if not patterns: return {"hooks": {}}
     return {"hooks": {"PreToolUse": [{"matcher": "Bash", "hooks": [

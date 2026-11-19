@@ -5,7 +5,7 @@ description: "Date every source and flag anything older than the topic's half-li
 
 # Source freshness check
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A deliverable rests on sources, and the topic moves.

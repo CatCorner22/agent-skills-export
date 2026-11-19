@@ -5,7 +5,7 @@ description: "Read any model benchmark, leaderboard or vendor comparison without
 
 # Benchmark skepticism
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 A post, vendor table or leaderboard compares models and someone wants to act on it.

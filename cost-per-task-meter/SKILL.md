@@ -5,7 +5,7 @@ description: "Measure what a model actually costs per successful task from usage
 
 # Cost per task meter
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 Any decision based on price per token. Per-token price ignores reasoning tokens, cache hits and failed runs.

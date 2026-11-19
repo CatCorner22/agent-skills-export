@@ -5,7 +5,7 @@ description: "Keep the set of tools sent to a model small, distinct and well des
 
 # Tool inventory control
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 An agent exposes many tools, several MCP servers, or large tool schemas.

@@ -5,7 +5,7 @@ description: "Redact personal data (emails, phones, SSNs, Luhn-valid card number
 
 # PII minimization before send
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 Text that may contain personal data is about to leave your machine for a hosted model whose terms, retention or jurisdiction you do not fully control.

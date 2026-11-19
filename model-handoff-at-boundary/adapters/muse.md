@@ -6,9 +6,8 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes (F1 to F15)
 
 ## Install
 
-- Run `muse skills install ./model-handoff-at-boundary --scope user`, or copy the whole folder to `~/.agents/skills/model-handoff-at-boundary/` (user) or `.agents/skills/model-handoff-at-boundary/` (project).
-- Muse Code may not surface project skills (t3code#19155). Add 1 line to the project's `AGENTS.md`: "When work moves from one model, session, or agent to another, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
-- Run `muse skills validate` on the folder and fix every error it reports.
+- Install the whole `model-handoff-at-boundary` folder with `muse skills install ./model-handoff-at-boundary --scope user`, or copy it to `<repo>/.agents/skills/model-handoff-at-boundary/`. Check it first with `muse skills validate ./model-handoff-at-boundary`.
+- Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. To load this skill every time, add 1 line to the project's `AGENTS.md`: "When work moves from one model, session, or agent to another, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
 
 ## Tool mapping
 
@@ -21,4 +20,4 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes (F1 to F15)
 1. **Hand off in a file, not in memory.** Muse's memory files drift, and it once took the user's name as its own (F6). Write the checkpoint file; tell the next model to read it first.
 2. **State roles by name.** Write who the user is and who the agent is in the checkpoint, so a roleplay or identity claim can't carry over (F6, F3).
 3. **Check the protocol.** Some Muse routes take only the Responses API, others only Chat Completions (section 4, item 2). Name the route and protocol in the checkpoint.
-4. **Use `high` effort if a route rejects `max`** (`reasoning_effort=max` was rejected on one route, hermes#140813; max effort is also slow, F10).
+4. **Use high effort.** At max effort Muse is slow and uses many tokens (F10). Muse Code's default effort is `high` (`--reasoning-effort` or `/effort`), and the Meta provider rejects `none` (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18).

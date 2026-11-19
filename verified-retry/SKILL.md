@@ -5,7 +5,7 @@ description: "Run model work as generate, check with an external verifier the mo
 
 # Verified retry
 
-> **Muse.** On Muse Code, Muse Spark, Muse Wonder, or the Meta Model API, also read `adapters/muse.md`.
+> **Every run:** read `adapters/muse.md` first. It maps this skill's tools to Muse and adds run rules for Muse's known failure modes.
 
 ## When it fires
 Work a test, validator or rubric can judge, on any model. Every model's pass@2 and pass@4 are well above its pass@1; a checker converts that into reliable output.
