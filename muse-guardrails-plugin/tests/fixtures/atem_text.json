@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/can1357/oh-my-pi/issues/15737",
+  "report_ref": "Section 4 theme 3 (Probable); missing opening envelope does not reconstruct a call",
+  "synthetic": true,
+  "input": {"response": {"status": "completed", "output": [{"type": "message", "role": "assistant", "content": [{"type": "output_text", "text": "</atem:parameter>\n</atem:invoke>\n</atem:function>"}]}]}},
+  "expected_codes": ["tool_call_as_text"]
+}

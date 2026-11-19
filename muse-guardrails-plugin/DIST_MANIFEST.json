@@ -1,0 +1,401 @@
+{
+  "built_at": "2026-11-10T19:10:19.375872+00:00",
+  "files": [
+    {
+      "path": "install-muse.sh",
+      "sha256": "d66610088156372dec27cb15f40977fe94bb5cf302013d2cc5218ee2ebf58b56"
+    },
+    {
+      "path": "plugin.json",
+      "sha256": "b4b92a8847a9c679453771ce9f80c7aa26cf621493a3ee9faaa4d19bcbd8168d"
+    },
+    {
+      "path": "references/PROVENANCE.md",
+      "sha256": "575488feb9f2ba9330b7738439ba36f1c02bfc010f0099096d516e31592eb0cc"
+    },
+    {
+      "path": "references/research/INPUT_MANIFEST.json",
+      "sha256": "dbc99943fe6125c8104b7fa28991e62e06cb61dd0a59f8bdbc1b749d962bd081"
+    },
+    {
+      "path": "references/research/evidence-index.md",
+      "sha256": "8eacdbfad2cc577f312acef00887bfcb4af96b1a34e01e9760cc87c8e1e19285"
+    },
+    {
+      "path": "references/research/evidence.md",
+      "sha256": "9b7f838e4da653c50e73cfd497d2db7b440c884707df08ca29909bc8a1799426"
+    },
+    {
+      "path": "references/research/knowledge/INDEX.md",
+      "sha256": "516fb24a72ccfa0817dda955bf4af44c01eac705cc05e54fcc4ff0e84eef53d8"
+    },
+    {
+      "path": "references/research/knowledge/sources/aa-11.md",
+      "sha256": "62cb54965a655405805e6c938fff671b0f279d49664f91538bc60e0875abcf3a"
+    },
+    {
+      "path": "references/research/knowledge/sources/aa-12.md",
+      "sha256": "7ef085f8e60fa4a571f995e99fe0ab302551746268bbbb337f9a034da0ad0a59"
+    },
+    {
+      "path": "references/research/knowledge/sources/aa-13.md",
+      "sha256": "fb86e1e999460ad45385c89e7a001b0a7f74bdb6388bb536d615894f7b810fa8"
+    },
+    {
+      "path": "references/research/knowledge/sources/aa-wonder.md",
+      "sha256": "a6e75928b453cbe615aae6547e65be0fad50d915ff5a4705dbde9b63db6f07ee"
+    },
+    {
+      "path": "references/research/knowledge/sources/ailately.md",
+      "sha256": "648d0b9dc012ad3c1b76b84f06190e21535cf2de3c083f8cb74bec809948d0d5"
+    },
+    {
+      "path": "references/research/knowledge/sources/apple-mlx.md",
+      "sha256": "867cb86264c7463dbe2561311302451fcf659fd8c4e3106786286052f3bb7e35"
+    },
+    {
+      "path": "references/research/knowledge/sources/build-open.md",
+      "sha256": "91b5bc372b752b9ef0b81453c25b5a05fa4c0216ad760bd0a5bcdf38a377fa34"
+    },
+    {
+      "path": "references/research/knowledge/sources/cheekypint.md",
+      "sha256": "e51082c19994df610b649045501a551685f984e0d3125edb31184022781332a0"
+    },
+    {
+      "path": "references/research/knowledge/sources/dev-spark11.md",
+      "sha256": "2ad1175ddc04cd1c803d6270a6606a2e610b996229d3b1aa3aebcadec257f194"
+    },
+    {
+      "path": "references/research/knowledge/sources/dev-spark13.md",
+      "sha256": "86ee6fbea4d518566ae709d8c16cf07b731b34ce75b33d9d9bf47b90cda00887"
+    },
+    {
+      "path": "references/research/knowledge/sources/fbnews.md",
+      "sha256": "ea3b8953f090a3a9e4f26ebd1e0ddbc73717a943227b6227a8435d3c19558e58"
+    },
+    {
+      "path": "references/research/knowledge/sources/gh-search-failures.md",
+      "sha256": "dba59e8a973af69e37d8d4e5d2a80038bc935582387590d06324f79198e2ce2f"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-1f916-ai-stocks-now.md",
+      "sha256": "d91c8240c26c6eef954e2706cb34927537e3ca428be2c35941fc5a5b19e59c99"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-alfonsodg-herdr.md",
+      "sha256": "4f8df4d26cd75745ee71006c233e80a8bb28e999e519465d559c773323b61d09"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-anomalyco-opencode.md",
+      "sha256": "e3ee5ef979b905fdb3db5b0023d89d18afb4af8fe7f2c2b0d8d103fdabba88d3"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-anpicasso-hermes-oc-free-provider.md",
+      "sha256": "56dc16497d624730676af0d83d5ec8061c078f045d5ede32de608ed2a63a1c23"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-anthropics-claude-code.md",
+      "sha256": "e343d5700d74572fb011d8105daec13a5e00a782e098262d47ba89efce0c2380"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-can1357-oh-my-pi.md",
+      "sha256": "33e288885ae95447a75c078729ae1f54146788ec38600b799606b1ecf0e44df9"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-commandcodeai-command-code.md",
+      "sha256": "2896b4730a04b591d968a9d5dadac6cbdf54290931570f542da2f8b6cff80610"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-decolua-9router.md",
+      "sha256": "ed2635e191973605a498a52b5dc098bf5b7a31e603295a80dc1b7e25ecf0fe80"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-getpaseo-paseo.md",
+      "sha256": "24e7646576bf9a016e3f1b75235d3553ed84960327c48ba370befef6d340ad94"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-ggml-org-llama-cpp.md",
+      "sha256": "40bf1a2ba1d8e4ca879146b0b76c794892d3088ba59d1606e9d85bf3dc2e4900"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-huggingface-trl.md",
+      "sha256": "d8f173665fb4fd4dc493417513aed1ce2ae1aafa84cf17a0250b56845920dd04"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-jeong-sik-masc.md",
+      "sha256": "918200042136c1bddacf178edd916c5d4be566e3db637d787c6dc90f13a422d3"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-kajal-ranvir-medisafe.md",
+      "sha256": "37621a4925e12c24671d4b14faa060e1338c8163b56c975982038d19d295c8b1"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-meta-models-meta-model-cookbook.md",
+      "sha256": "4b0ec77a5643ee6258c27c57aaea06f9d086a240444ad20da7e1806278e1988c"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-monotykamary-pi-tool-repair.md",
+      "sha256": "e5d551768702230d316852e4b5553ffa9489407f6ce86a99dcc65ae4a6462457"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-nousresearch-hermes-agent.md",
+      "sha256": "503d666c3d4a8c92e4d61a468c652dd4468b9811fbad415ae26a11b6d89fc1b0"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-pytorch-torchtitan.md",
+      "sha256": "ebe66427e7f3f76fe3ad185e12cd328909f4bf455ec918e9187b6806ada45894"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-tableproapp-tablepro.md",
+      "sha256": "7bdd121848ecc21dcf210b12b7458e99a533daf11de6ef63b61b5ef19159baaa"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-vllm-project-vllm.md",
+      "sha256": "e2fa34ecd38919d340d73cfd74f9e517751c9ee6edf1555050ef44d5d0440560"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-wei-shaw-sub2api.md",
+      "sha256": "06d334c43ad59c5766fae7d92b9cb1935e33a0cf93ca2ce502a813cfaab7c32d"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-yanyuliu-meta-muse-eval.md",
+      "sha256": "188262ef9a0fd5296b6f7f0021c7046701506ef8593ef7c0cefa0298a7aaeab1"
+    },
+    {
+      "path": "references/research/knowledge/sources/github-yetone-magpie.md",
+      "sha256": "e8c7534611ee34e4de5f400d071f8b99a6f026de6d0a57e3e13631721d30830b"
+    },
+    {
+      "path": "references/research/knowledge/sources/hf-card.md",
+      "sha256": "94543dd0c0da7081f365bd51e93824bad91fb471a2d4f88497ce40f86e9b367c"
+    },
+    {
+      "path": "references/research/knowledge/sources/hf-open.md",
+      "sha256": "65084162f64ce48faa41c1f18488cd6f1a57b30b150c22e9e9fe882f1b4948e1"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-47692043.md",
+      "sha256": "f378705b63e3a3c78b0787e7e9b3c0ae878b5a16afbb2d6f3f4896721e0c35ac"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-48846184.md",
+      "sha256": "4ec76fae5d9b1f7c0757b5abfd2e1756892c04544ee5b1ebc76530f8fc48230b"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-48854838.md",
+      "sha256": "b4c0cece1f44d15ce86f3d14918174d3c3a6d8428423eb349cf2cd06f90e48ec"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-48865093.md",
+      "sha256": "34550e8dd84a5539e401209e72f7f6bc893d68a4fa2c482202362d468b80fbda"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-49187575.md",
+      "sha256": "508fb16857156ef8037964d6be15e77746c24b037902bf43834fb3192d82b792"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-49541256.md",
+      "sha256": "a132839cbfb8975becd93d916c74efe40027d5b3ec3b06237bcbdf2732fac442"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-49983579.md",
+      "sha256": "85c0e9760fc42e8c108e2b78bac5147cc2d1eab96bedc3c05a168e13efdb84b2"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-50059115.md",
+      "sha256": "02564df6ac02394056a24f99254cc18ed1a685e39ada4c56556726cc017accc8"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-50107379.md",
+      "sha256": "35af7e8809d9255075e6c7ed7231bb1b28ed041dfcfa0db11de0b454477a39e4"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-50118320.md",
+      "sha256": "682faa1055bde68d18d7e1f40703fe7012c0c5529ce7f8cb98be266a664a643c"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-50287747.md",
+      "sha256": "b75943668ef3f798113a389a65d77255ea3e18299d9c1280bc0eeec558cedee9"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-agentsetup-muse.md",
+      "sha256": "86b5c93528ba6393bc53b18919a7ba6362a8e886407008aece961a41fefe14c1"
+    },
+    {
+      "path": "references/research/knowledge/sources/hn-keyword-comments.md",
+      "sha256": "57fd7e453749088b5fbdd9e46bf601cfece73d927eb9e93da8b96378e055ddd2"
+    },
+    {
+      "path": "references/research/knowledge/sources/int21.md",
+      "sha256": "de6768f5b0acc09a8c850d3d4ca59584389cf853dc0b8c3f821888b9efd8acaa"
+    },
+    {
+      "path": "references/research/knowledge/sources/juhenza.md",
+      "sha256": "f3f1ad765fe47f9e15eb384674fb79b73031e1b94980ff755ab4e2faf13c3655"
+    },
+    {
+      "path": "references/research/knowledge/sources/latent.md",
+      "sha256": "3d275b0fa42f219c7e84d1ae03a03ea0c5d86011a7611d2216b7e76e4234f81f"
+    },
+    {
+      "path": "references/research/knowledge/sources/math-papers.md",
+      "sha256": "8ad9067565d6df58f593639d0d17929e9a86e13c24f26e552e1bcad86270d5dd"
+    },
+    {
+      "path": "references/research/knowledge/sources/msl-blog.md",
+      "sha256": "f02b621477b797e039aebd15543adc5381c18ea36eaca1b3d6968e1b0959b52e"
+    },
+    {
+      "path": "references/research/knowledge/sources/muse-agent.md",
+      "sha256": "219feeec51bbf537376b5a3e3011fbbb71158af6a0e3369484b24c2e8762b6a9"
+    },
+    {
+      "path": "references/research/knowledge/sources/muse-business.md",
+      "sha256": "0a72767e4ba9bcdf73514c2a43e83f2fdf2d3c869e3dc6c5598ef70363a0a014"
+    },
+    {
+      "path": "references/research/knowledge/sources/muse-platform.md",
+      "sha256": "00487e1adf235b8529b6c6b6285db80f50d002854c1d832be4c546dc2de827a9"
+    },
+    {
+      "path": "references/research/knowledge/sources/museai.md",
+      "sha256": "f8386c77bfb600ba317846e06c221f7e4a9ec8b63f6cf1cda74bda1578853b4c"
+    },
+    {
+      "path": "references/research/knowledge/sources/musecode-blog.md",
+      "sha256": "f55454ae4c88d5aacadb0026d598dffee873516b99cbfdbe3a03b3e143f9257f"
+    },
+    {
+      "path": "references/research/knowledge/sources/neuromatch-pi-2to5.md",
+      "sha256": "32ad5699f636656bc75da51c41a107ac7d3aa381a83b3e4b70c74e8da9c0c956"
+    },
+    {
+      "path": "references/research/knowledge/sources/neuromatch-pi.md",
+      "sha256": "18acd148ba355e85309af5d881d9c06f53d43ad7ad071ec9c86afa56345b4154"
+    },
+    {
+      "path": "references/research/knowledge/sources/notebookcheck.md",
+      "sha256": "5945cc6f3818c1ca05c0147554c3868f308a959222d8fe886a5d3f26e371a953"
+    },
+    {
+      "path": "references/research/knowledge/sources/open-blog.md",
+      "sha256": "71104cfbd1f9c9d631dca0e72e36db2e9d8d347207bb43c2ce7b8348d9e71d8a"
+    },
+    {
+      "path": "references/research/knowledge/sources/open-evalmethod.md",
+      "sha256": "a902fac3e20eda100cf029014be28e4c55bc467f62aebbe2e7977a1bbc34421e"
+    },
+    {
+      "path": "references/research/knowledge/sources/spark11-blog.md",
+      "sha256": "d15b873aa5e356ab43cb5bc9658ecf3030cff47b300de08bef3223c70a7d2526"
+    },
+    {
+      "path": "references/research/knowledge/sources/spark13-blog.md",
+      "sha256": "fb95c1b97866e74259273b0b9727643bcc78773b58f43223f5c9cbbe20f9ce2a"
+    },
+    {
+      "path": "references/research/knowledge/sources/time-privacy.md",
+      "sha256": "c381bc305adbe55792608c9bc5a41510b85e592213ac5485ccdb3feabeaf5e3e"
+    },
+    {
+      "path": "references/research/knowledge/sources/tryai.md",
+      "sha256": "56e576804fc15500121753e4959bafd7316de39cfb8bf36f542b371612326b7b"
+    },
+    {
+      "path": "references/research/knowledge/sources/willison.md",
+      "sha256": "e8fcde5a53406d8d67cf9a5b9c4b3986fcabe793184d7701ff6166cc140a04f6"
+    },
+    {
+      "path": "references/research/knowledge/sources/wonder-blog.md",
+      "sha256": "dc31ee83fe732c981e6f60bcc7635490b09f67a6047a0bfc09465f89d36654c6"
+    },
+    {
+      "path": "references/research/report.md",
+      "sha256": "fde633843b41eb1b908cecb527c95414677e1434e576f49e657b36fa18450a49"
+    },
+    {
+      "path": "scripts/build_dist.py",
+      "sha256": "bd704d3cfb6422c4a98c3ec4a27dbdfd728eea3fad9d16cefa87d4670e838cc2"
+    },
+    {
+      "path": "skills/muse-abstention-recovery/SKILL.md",
+      "sha256": "4d6481979b677430c087c7d58205d6104bc74f056cc4de1ccd0ff2d041ef19e5"
+    },
+    {
+      "path": "skills/muse-agent-action-gate/SKILL.md",
+      "sha256": "dc66493fe710efb44e37a99b7081178afe196149551a4bd05932ce0ec8a0cd31"
+    },
+    {
+      "path": "skills/muse-api-integration-check/SKILL.md",
+      "sha256": "212765e4417f81f14eaa344cff79fb2792352e548050e3869a6b1999a98b3fb9"
+    },
+    {
+      "path": "skills/muse-api-integration-check/references/validator.md",
+      "sha256": "ed1408c7f4cbd08e79a3d2d71a4e575a30a4241660e95f372c0f2a228e0c6b58"
+    },
+    {
+      "path": "skills/muse-api-integration-check/scripts/muse_response_check.py",
+      "sha256": "22769d66883d27b6bacba74442e25699325f57dcfe42afabf92c928adc53b875"
+    },
+    {
+      "path": "skills/muse-benchmark-skepticism/SKILL.md",
+      "sha256": "d2b25fbc61990afb388faae7e21228c9bd80ebb4b03ed49c31415bfb62b0954b"
+    },
+    {
+      "path": "skills/muse-injection-hygiene/SKILL.md",
+      "sha256": "72146951c3734787ca8e6e78a077742a885f08c12e530d1ebe9aff17f972159e"
+    },
+    {
+      "path": "skills/muse-long-session-hygiene/SKILL.md",
+      "sha256": "b012e4fea9e4ae03e02735e3c7df945fedbc0a7cc8e2e3fcbb836fd09fa1a1d8"
+    },
+    {
+      "path": "skills/muse-privacy-minimization/SKILL.md",
+      "sha256": "71f2fbaeb3f6893853f96170ffdfc64ab2e702f5ab02cfc04a553962bea77b9a"
+    },
+    {
+      "path": "skills/muse-verification-pass/SKILL.md",
+      "sha256": "457d57c4a150150bd5961844263209100d6bc5b0e56b34347f540b3af5738159"
+    },
+    {
+      "path": "tests/fixtures/atem_text.json",
+      "sha256": "040984786edf3f0e9103fe7364fa0f18c460b7f95074f30c931f742a3f6fa6a1"
+    },
+    {
+      "path": "tests/fixtures/chat_empty.json",
+      "sha256": "6e9ea1212ef21bd2b18ec134c5162ff63036d65de4a129790b54ffe3c29c2707"
+    },
+    {
+      "path": "tests/fixtures/length_partial.json",
+      "sha256": "db02c364929ccd864ffeb9dd40157966cb4b6640235cd9b8c00bd2ab74df3ce6"
+    },
+    {
+      "path": "tests/fixtures/protocol_error.json",
+      "sha256": "e720ee44f3429a49afca763ea69467f117fa10e5828095a1de43a09ff6c65a41"
+    },
+    {
+      "path": "tests/fixtures/reasoning_empty.json",
+      "sha256": "9a212ed0f9908dede804be8ae7653d1c5e8436772c3f86d42d93e9d6c56aa4a5"
+    },
+    {
+      "path": "tests/fixtures/undeclared_tool.json",
+      "sha256": "3ef79e4b82c933542b562c6ce8a3f698984491d8b86a48893b934098a70f9925"
+    },
+    {
+      "path": "tests/fixtures/whole_float.json",
+      "sha256": "2f25ea791e8e9fcbc6aa8173c526d99e6c9216baaa998e1aed29a9d311d11c9b"
+    },
+    {
+      "path": "tests/lint_skills.py",
+      "sha256": "9b73956037f0ea3b016714fdc9f4c474b6692bb64dace5f3aba4fcca66a6764e"
+    },
+    {
+      "path": "tests/test_pack.py",
+      "sha256": "d76d4a0d8c4f979751a74c016ab91c703bed4d8b19db97aac8edd0471cbd12ed"
+    },
+    {
+      "path": "tests/test_response_check.py",
+      "sha256": "fc2bc54272c2918f9a9524546be496269691af3c88f60dd4215899db5ee135b7"
+    }
+  ]
+}

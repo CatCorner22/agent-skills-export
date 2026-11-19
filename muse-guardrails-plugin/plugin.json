@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "muse-guardrails",
+  "version": "1.0.0",
+  "description": "Eight evidence-scoped Muse guardrails for abstention, agent actions, injection, privacy, API integration, benchmark claims, long sessions and verification passes.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "license": "Proprietary"
+}

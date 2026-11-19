@@ -1,6 +1,6 @@
 ---
 name: chain-of-custody-provenance
-description: "Token- or block-level provenance: which inputs, tools, prompt sections, and turns produced each output segment. Use when debugging AI failures or audit requirements. Scope boundary: claim-level sources → `journalistic-attribution`; orient logging → `ooda-adaptive-context`."
+description: "Token- or block-level provenance: which inputs, tools, prompt sections, and turns produced each output segment. Use when debugging AI failures or audit requirements. Scope boundary: claim-level sources → `claim-evidence-pairing`; orient logging → `ooda-adaptive-context`."
 metadata:
   priority: 7
   promptSignals:

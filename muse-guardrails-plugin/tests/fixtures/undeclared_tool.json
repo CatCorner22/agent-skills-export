@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/yetone/magpie/issues/1448",
+  "report_ref": "Section 4 theme 4; family F10 in section 7 (Established family only); attribution unclear",
+  "synthetic": true,
+  "input": {"response": {"choices": [{"finish_reason": "tool_calls", "message": {"role": "assistant", "content": null, "tool_calls": [{"type": "function", "function": {"name": "bogus_tool", "arguments": "{}"}}]}}]}, "declared_tools": ["search"]},
+  "expected_codes": ["undeclared_tool", "empty_visible_content"]
+}

@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/yetone/magpie/issues/3152",
+  "report_ref": "Section 4 theme 5; family F10 in section 7 (Established family only); client/schema mismatch, not established malformed numeric value",
+  "synthetic": true,
+  "input": {"response": {"status": "completed", "output": [{"type": "function_call", "name": "search", "arguments": "{\"limit\":8.0}"}]}, "declared_tools": ["search"], "tool_schemas": {"search": {"type": "object", "properties": {"limit": {"type": "integer", "minimum": 0, "maximum": 100}}, "required": ["limit"], "additionalProperties": false}}},
+  "expected_codes": ["integer_type_mismatch", "empty_visible_content"]
+}
