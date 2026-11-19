@@ -36,5 +36,5 @@ Read on 2026-11-18. A vendor changes its product, so rule 0.2 requires a live pr
 ## Install
 
 - Put the whole `hinshitsu-plugin` folder in the workspace. The 7 skill folders need `scripts/`, `templates/` and `skills/hinshitsu/GLOSSARY.md`; a copy of the skill folders alone is not a supported install.
-- Make the skills visible to Muse Code: copy or link each folder under `skills/` to `<repo>/.agents/skills/<skill-id>/`, or run `muse skills install <folder> --scope project` for each one (https://dev.meta.ai/docs/muse-code/extending, read 2026-11-18). Check each with `muse skills validate <folder>`. UNVERIFIED: no install was run on this surface.
+- Install the plugin with `muse plugins install ./hinshitsu-plugin --scope user` (or `--scope project`); `muse plugins validate ./hinshitsu-plugin` reports `valid` with 7 skills (Muse Code 1.4.23, run 2026-11-18). To use the skills without the plugin, copy each folder under `skills/` to `<repo>/.agents/skills/<skill-id>/`. Check each with `muse skills validate <folder>`.
 - `AGENTS.md`: Muse Code loads it at the start of every session (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18). Add 1 line: "Before any task that produces something a person will receive, read `skills/hinshitsu/SKILL.md` and follow it."

@@ -4,12 +4,12 @@
 
 ## Install on Muse Code
 
-- **A folder skill:** `muse skills install ./<folder> --scope user` for every project, or copy the folder to `<repo>/.agents/skills/<folder>/` for 1 repository. Check it first with `muse skills validate ./<folder>`.
+- **A folder skill:** `muse skills install ./<folder>` for every project, or copy the folder to `<repo>/.agents/skills/<folder>/` for 1 repository. Check it first with `muse skills validate ./<folder>`.
 - **A single `.md` file:** make a folder with the skill's name, put the file in it, rename the file `SKILL.md`, and install the folder as above.
-- **A plugin folder** (the 5 folders that end in `-plugin`): its `README.md` gives the steps; `muse-guardrails-plugin/` uses `./install-muse.sh` instead. Install each folder under its `skills/` folder as a skill.
+- **A plugin folder** (the 5 folders that end in `-plugin`): `muse plugins install ./<folder> --scope user` (or `--scope project`). Its `README.md` gives any extra steps. `muse-guardrails-plugin/` has no README; `./install-muse.sh` is its other install route.
 - **An always-on skill:** Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. For a skill that must apply to every reply, such as `unambiguous-language`, add 1 line to `AGENTS.md`, which Muse Code loads at the start of every session.
 
-Nobody has run these skills on Muse Code yet. The Muse-specific steps come from Meta's Muse Code documentation (https://dev.meta.ai/docs/muse-code, read 2026-11-18).
+The 57 skills and 4 plugins that were here before `muse-guardrails-plugin/` and the Kimi-session skills were added pass `muse skills validate` and `muse plugins validate` on Muse Code 1.4.23. The added skills and plugin haven't been through those checks yet. Nobody has run a task with them on Muse Code yet. The Muse-specific steps come from Meta's Muse Code documentation (https://dev.meta.ai/docs/muse-code, read 2026-11-18).
 
 ## Contents
 
@@ -52,7 +52,7 @@ Nobody has run these skills on Muse Code yet. The Muse-specific steps come from 
 | `hinshitsu-plugin/` | Quality checks | 7-skill quality system: user-approved criteria, red cell, 8 independent auditors, coverage ledger, evidence-cited delivery report and progress gauge. |
 | `internal-focus-group.md` | Quality checks | Tests a draft on simulated personas of the real recipients before it ships. |
 | `mscd-contracts/` | Quality checks | Reviews, redlines, comments on and drafts contracts to Adams's MSCD5 in Blake's house style; lint, coverage and rule-query scripts; `adapters/muse.md` adds Muse run rules. |
-| `muse-guardrails-plugin/` | Quality checks | 8 Muse guardrails: abstention, agent actions, injection, privacy, API defects, benchmark claims, long sessions, verification passes. `./install-muse.sh` installs them into `~/.agents` (or a repo's `.agents`) with their research references. |
+| `muse-guardrails-plugin/` | Quality checks | 8 Muse guardrails: abstention, agent actions, injection, privacy, API defects, benchmark claims, long sessions, verification passes. Install with `muse plugins install ./muse-guardrails-plugin --scope user`, or run `./install-muse.sh` to copy them into `~/.agents` (or a repo's `.agents`) with their research references. |
 | `one-way-optimal-language/` | Quality checks | Drafts and reviews one-way medical, dental, pharmacy and research text: active voice, R1-R30 ambiguity rubric, plain language; `scripts/av_scan.py`; `adapters/muse.md` adds Muse run rules. |
 | `output-language-lock/` | Quality checks | Keep any model's answer in the requested language and script when prompts, sources or tools are in another language: lock the language in the system prompt, keep code and identifiers out of the rule, and measure the script share of the output, ignoring code blocks and URLs. `adapters/muse.md` adds Muse run rules. |
 | `progressive-resistance-critique.md` | Quality checks | Escalating self-critique passes: consistency, alignment, robustness, failure. |

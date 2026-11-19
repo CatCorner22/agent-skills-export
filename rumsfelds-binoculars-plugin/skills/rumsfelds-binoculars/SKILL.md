@@ -2,7 +2,6 @@
 name: rumsfelds-binoculars
 description: Model-agnostic risk reconnaissance that sorts what a plan, system, decision, or document rests on into known knowns, known unknowns, unknown knowns, and unknown unknowns, then hunts black swans and other high-consequence, low-frequency events with adversarial models and tail statistics. Verifies the facts the team relies on, triages open questions by value of information, widens the search for surprises with pre-mortems, outside-view base rates, and adversary play, and runs bundled scanners that test a data series for heavy tails and rank scenarios by consequence under probability error. Use when the user asks what could go wrong, what we do not know, what the worst case is, for a pre-mortem, a risk register, a black-swan or tail-risk review, scenario analysis, or whether a rare event is more likely than the plan assumes. Not for ordinary quality control of a finished deliverable or for statistics that do not concern rare, severe outcomes.
 license: Proprietary. Owner-approved use only.
-compatibility: Runs in any LLM host. Python 3.8 or later runs the optional scripts. Without a shell, the skill works from the references and says which checks it could not run.
 metadata:
   display-name: Rumsfeld's Binoculars
   version: "1.0.0"
