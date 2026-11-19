@@ -1,6 +1,6 @@
 # Exported skills and plugins
 
-35 items. No ZIP. Each `.md` file is 1 skill's `SKILL.md`, renamed to the skill name; to install it, put it in a folder with that name and rename it back to `SKILL.md`. Each folder is a whole skill or plugin with its scripts, templates and manifests.
+36 items. No ZIP. Each `.md` file is 1 skill's `SKILL.md`, renamed to the skill name; to install it, put it in a folder with that name and rename it back to `SKILL.md`. Each folder is a whole skill or plugin with its scripts, templates and manifests.
 
 ## Exported
 
@@ -41,6 +41,7 @@
 | 33 | `after-action-review.md` | On track | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/after-action-review/SKILL.md` | Debrief after a task: intended vs actual vs gap vs fix, logged for patterns. |
 | 34 | `mscd-contracts/` | Quality checks | user-supplied (mscd-contracts.zip), Muse-optimized | `/home/ubuntu/attachments/c664a17a-1871-4293-8d59-9ac8c85dff9d/mscd-contracts.zip` | Reviews, redlines, comments on and drafts contracts to Adams's MSCD5 in Blake's house style; lint, coverage and rule-query scripts; `adapters/muse.md` adds Muse run rules. |
 | 35 | `one-way-optimal-language/` | Quality checks | user-supplied (one-way-optimal-language.zip), Muse-optimized | `/home/ubuntu/attachments/e2156890-e2f8-4bf2-8aa4-86eeb5abdf14/one-way-optimal-language.zip` | Drafts and reviews one-way medical, dental, pharmacy and research text: active voice, R1-R30 ambiguity rubric, plain language; `scripts/av_scan.py`; `adapters/muse.md` adds Muse run rules. |
+| 36 | `unambiguous-language/` | Quality checks | user-supplied (unambiguous-language-muse.zip), Muse form | `/home/ubuntu/attachments/54084492-57b1-4161-ad27-4ba033b72e44/unambiguous-language-muse.zip` | Blake's always-on language rules: active voice, "might" for possibility, and 3 lists of ambiguous words and MSCD usages with replacements; Muse run rules. |
 
 ## Found but left out
 
