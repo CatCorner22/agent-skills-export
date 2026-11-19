@@ -28,6 +28,7 @@ One paragraph: what to produce and for whom.
 ## Output shape
 ```
 <schema or labeled template; use "unknown" for anything unsupported>
+For a sub-agent: {"status": "ok|blocked|failed", "summary": "<=3 sentences", "evidence": ["command or file:line that proves each claim"], "changed_files": [], "open_questions": []}
 ```
 
 ## Stop rule

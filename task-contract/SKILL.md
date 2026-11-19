@@ -1,6 +1,6 @@
 ---
 name: task-contract
-description: "Write the task to any model as a contract: job, finish line with runnable checks, an effective-instructions block that replaces earlier instructions, boundaries, harness-owned state, inputs present, output shape and a numbered stop rule. Use before delegating non-trivial work to a model or sub-agent, when a run drifted or stopped early, when corrections keep getting appended, and when output must be cacheable. Ships a template and contract_check.py. Scope boundary: expanding a thin spec into requirements and defining done for a human deliverable are skill:deliverable-first."
+description: "Write the task to any model as a contract: job, finish line with runnable checks, an effective-instructions block that replaces earlier instructions, boundaries, harness-owned state, inputs present, output shape and a numbered stop rule. Use before delegating non-trivial work to a model or sub-agent (including a stand-alone sub-agent brief with a JSON evidence return), when a run drifted or stopped early, when corrections keep getting appended, and when output must be cacheable. Ships a template and contract_check.py. Scope boundary: expanding a thin spec into requirements and defining done for a human deliverable are skill:deliverable-first."
 ---
 
 # Task contract
@@ -16,7 +16,8 @@ A model or sub-agent is about to do work longer than one reply, or a previous ru
 3. Keep counts, dates, versions, done/pending lists and deadlines in "State", written by the harness each turn. Do not let the model infer them from history.
 4. List every input by name under "Inputs present". Anything referred to but not listed is a stop condition, not a guess.
 5. Run `python3 scripts/contract_check.py contract.md --files <attached files>`. It fails on missing or empty sections, leftover placeholders, a stop rule without a number, and inputs that are not attached; it warns about timestamps or run ids above the State section, which would break prefix caching.
-6. Send the contract with stable sections first and State last. Re-send the full contract (with a bumped generation number) after any change instead of a one-line correction.
+6. When the contract goes to a sub-agent that shares none of your context, use this Output shape: `{"status": "ok|blocked|failed", "summary": "<=3 sentences", "evidence": ["command or file:line"], "changed_files": [], "open_questions": []}`. When results come back, read `evidence` first; `status: ok` with empty evidence means retry with a tighter contract.
+7. Send the contract with stable sections first and State last. Re-send the full contract (with a bumped generation number) after any change instead of a one-line correction.
 
 ## Evidence
 - Practitioner migration guidance across providers: pass effective instructions explicitly, pass state in structured form, keep counts and recency on the harness side, treat large context as headroom not a warehouse.

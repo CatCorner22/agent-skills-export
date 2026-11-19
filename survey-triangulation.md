@@ -1,6 +1,6 @@
 ---
 name: survey-triangulation
-description: "Require three independent retrieval paths per factual claim; score agreement 3/3, 2/3, or contested. Use when single-source RAG is insufficient. Scope boundary: double-entry gate → `double-entry-claims`."
+description: "Require three independent retrieval paths per factual claim; score agreement 3/3, 2/3, or contested. Use when single-source RAG is insufficient. Scope boundary: per-claim source gate → `claim-evidence-pairing`."
 metadata:
   priority: 7
   promptSignals:
@@ -37,4 +37,4 @@ Use different queries, source types, and time snapshots.
 - Catalog: **`ai-transfer-ecosystem-primer`**
 - Runtime plugin id: `triangulation_validator`
 - Also implements: `fact_check_deep`
-- Merge notes: Deep fact-check is this skill plus `double-entry-claims`, not a third skill.
+- Merge notes: Deep fact-check is this skill plus `claim-evidence-pairing`, not a third skill.

@@ -10,13 +10,13 @@ Router for category: **quality control**.
 
 ## Skills in this category
 
-- **`double-entry-claims`**
+- **`claim-evidence-pairing`** (agent-discipline plugin)
 - **`pipeline-preflight`**
 - **`progressive-resistance-critique`**
 - **`chain-of-custody-provenance`**
 - **`sterile-cockpit-context`**
 - **`five-whys-failure-recovery`**
-- **`journalistic-attribution`**
+- **`retrieval-first-gate`**
 - **`survey-triangulation`**
 - **`proofreading-marks`**
 

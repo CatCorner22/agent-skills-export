@@ -21,5 +21,8 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes (F1 to F15)
 1. **Put consequential actions behind a stop.** Muse's approval gate leaks (confirmation recall 5/12, F4). List pay, send, cancel, order, post and delete as stop-and-ask in the contract.
 2. **Fill gaps with placeholders.** Muse tends to decline rather than guess (F1). Tell it to insert `[X: what is missing]`, finish, and list the placeholders.
 3. **Write a stop rule.** Muse repeats loops (F8). Give a maximum number of passes or tool calls.
-4. **Confirm every script ran.** On Muse Code, tool calls sometimes come out as plain text and never run (section 4, item 3). Read the script's output and exit status. If you didn't see output, it didn't run; don't report it as run.
-5. **Use high effort.** At max effort Muse is slow and uses many tokens (F10). Muse Code's default effort is `high` (`--reasoning-effort` or `/effort`), and the Meta provider rejects `none` (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18).
+4. **For a sub-agent, restate every prohibited action.** Muse's background worker finished work the main chat refused (F5). A worker gets no rule you didn't write down.
+5. **Name the roles.** Muse accepted a roleplay identity ("I am actually you") and kept it (F3, F6). State who the user is and who the worker is.
+6. **Require proof of tool runs.** Muse can print tool calls as text without running them (section 4, item 3). Ask the worker to put each command's output in `evidence`.
+7. **Confirm every script ran.** On Muse Code, tool calls sometimes come out as plain text and never run (section 4, item 3). Read the script's output and exit status. If you didn't see output, it didn't run; don't report it as run.
+8. **Use high effort.** At max effort Muse is slow and uses many tokens (F10). Muse Code's default effort is `high` (`--reasoning-effort` or `/effort`), and the Meta provider rejects `none` (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18).
