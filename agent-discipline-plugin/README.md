@@ -11,6 +11,7 @@ ten minutes or any data, it lives in State or Enforcement, not Guidance.
 
 ## Layout
 ```
+plugin.json                    plugin manifest (Agent Plugins format; `muse plugins validate .`)
 hooks/hooks.json               hooks for Muse Code's .muse/hooks.json: SessionStart/PostCompact reinject, PreToolUse guards, PostToolUse log+trim, Stop gate
 lib/ad.py                      one CLI + hook entrypoint (stdlib only, Python ≥3.8); lib/ad_*.py modules
 skills/<name>/SKILL.md         16 skills (see table)
@@ -43,7 +44,7 @@ python3 lib/ad.py fetch-check "curl -O https://…/genome.cram"   # → denied, 
 python3 -m unittest discover tests
 ```
 Install on Muse Code:
-1. Install each folder under `skills/` with `muse skills install <folder> --scope project`, or copy it to `<repo>/.agents/skills/<name>/`.
+1. Install the plugin with `muse plugins install ./agent-discipline-plugin --scope user` (or `--scope project`), or copy each folder under `skills/` to `<repo>/.agents/skills/<name>/`.
 2. Copy `hooks/hooks.json` to `<repo>/.muse/hooks.json` and replace every `__AD_ROOT__` with the absolute path of this folder. Muse Code runs hook commands with a cleared environment, so a path variable won't reach them. Project hooks run only after you trust the workspace.
 3. Start a new session; Muse Code loads hooks at startup. It warns about any event, matcher, or handler it doesn't support and skips that entry, so read the startup warnings and fix the tool names in each `matcher` to match Muse Code's tools.
 

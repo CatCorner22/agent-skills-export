@@ -4,12 +4,12 @@
 
 ## Install on Muse Code
 
-- **A folder skill:** `muse skills install ./<folder> --scope user` for every project, or copy the folder to `<repo>/.agents/skills/<folder>/` for 1 repository. Check it first with `muse skills validate ./<folder>`.
+- **A folder skill:** `muse skills install ./<folder>` for every project, or copy the folder to `<repo>/.agents/skills/<folder>/` for 1 repository. Check it first with `muse skills validate ./<folder>`.
 - **A single `.md` file:** make a folder with the skill's name, put the file in it, rename the file `SKILL.md`, and install the folder as above.
-- **A plugin folder** (the 4 folders that end in `-plugin`): its `README.md` gives the steps. Install each folder under its `skills/` folder as a skill.
+- **A plugin folder** (the 4 folders that end in `-plugin`): `muse plugins install ./<folder> --scope user` (or `--scope project`). Its `README.md` gives any extra steps.
 - **An always-on skill:** Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. For a skill that must apply to every reply, such as `unambiguous-language`, add 1 line to `AGENTS.md`, which Muse Code loads at the start of every session.
 
-Nobody has run these skills on Muse Code yet. The Muse-specific steps come from Meta's Muse Code documentation (https://dev.meta.ai/docs/muse-code, read 2026-11-18).
+All 57 skills pass `muse skills validate` and all 4 plugins pass `muse plugins validate` on Muse Code 1.4.23. Nobody has run a task with them on Muse Code yet. The Muse-specific steps come from Meta's Muse Code documentation (https://dev.meta.ai/docs/muse-code, read 2026-11-18).
 
 ## Contents
 

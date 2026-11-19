@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agent-discipline",
+  "version": "1.0.0",
+  "description": "16 skills and 9 deterministic guards against recurring agent failures: resource blindness, re-read loops, context rot, passivity, over-agency, false 'done', sycophancy, rule neglect, tool misuse, silent assumptions, model drift. CLI (lib/ad.py) plus hooks for Muse Code's .muse/hooks.json.",
+  "author": {
+    "name": "CatCorner22"
+  },
+  "license": "Proprietary"
+}

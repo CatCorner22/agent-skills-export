@@ -2,7 +2,6 @@
 name: chicken-little-overwatch
 description: Model-agnostic quality control and red-team review for work that an AI helped produce. Checks requirements, evidence, and execution; enforces a plain-language, active-voice writing standard (Ken Adams style and the R1-R30 ambiguity rubric); and runs an adversarial swarm that raises every credible alarm, then a Defender and an Arbiter that test whether each alarm holds up. Use when the user asks to review, QC, audit, fact-check, proofread, stress-test, or red-team an app, document, policy, procedure, research summary, or prompt that an LLM drafted, or asks for active-voice or plain-language rewriting of medical, dental, pharmacy, research, or business text. Not for a standalone red-team campaign against a plan, product, or model when no deliverable needs verification.
 license: Proprietary. Owner-approved use only.
-compatibility: Runs in any LLM host. Python 3.8 or later runs the optional scanners in scripts. Without a shell, the skill falls back to an eye check and says so.
 metadata:
   display-name: Chicken Little Overwatch
   version: "2.0.0"
