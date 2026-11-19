@@ -6,8 +6,8 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes come from t
 
 ## Install
 
-- Install the whole `mscd-contracts` folder. The scripts need `data/` and `references/`.
-- Muse Code doesn't always surface project skills: in 1 bug report, skills didn't appear on Muse threads (t3code#19155). So add 1 line to the project's `AGENTS.md`: "Before any contract review, redline, comment set, or draft, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
+- Install the whole `mscd-contracts` folder with `muse skills install ./mscd-contracts --scope user`, or copy it to `<repo>/.agents/skills/mscd-contracts/`. The scripts need `data/` and `references/`. Check it first with `muse skills validate ./mscd-contracts`.
+- Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. To load this skill every time, add 1 line to the project's `AGENTS.md`: "Before any contract review, redline, comment set, or draft, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
 - Install python-docx (`pip install python-docx`). Without it the lint falls back to a plain reader and skips its 4 groups of .docx self-tests.
 - Check the install with `python3 <skill folder>/scripts/mscd_lint.py --self-test`. It must print `self-test: N/N passed` with nothing skipped.
 
@@ -15,10 +15,8 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes come from t
 
 | The skill says | On Muse |
 |---|---|
-| a report in a Docs tool (Stage 1, mode) | A `.md` or `.docx` file in the working folder |
-| start a subagent (Stage 2b; Draft step 5) | A Muse Code subagent whose prompt is the brief in `references/fix-check.md`, with the 4 paths and the skill folder. Muse Code documents subagents in `agents.json`, with the fields `description`, `prompt`, `model`, and `effort` (https://dev.meta.ai/docs/muse-code/agents) |
+| start a subagent (Stage 2b; Draft step 5) | A Muse Code subagent whose prompt is the brief in `references/fix-check.md`, with the 4 paths and the skill folder. For a fixed checker, define a custom agent with `description` and `prompt` and pass it with `muse --agents` (https://dev.meta.ai/docs/muse-code/agents, read 2026-11-18) |
 | the docx skill (`merge_runs.py`, `comment.py`, `validate.py`, `accept_changes.py`) | Muse Code doesn't ship this skill, and these tools are part of it. If the skill isn't installed, follow the Hard case "The docx skill isn't available" |
-| Project files | The workspace. The rule database is `data/rules.jsonl`; query it with `scripts/rules_query.py` |
 
 ## Run rules
 
@@ -33,7 +31,7 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes come from t
 
 ## Effort
 
-At max effort, Muse uses many more tokens than the median model and takes longer to answer (report section 2.4, F10). At least 1 harness rejects `reasoning_effort=max` (hermes#140813). Use high effort for the analysis passes and the fix check. If the host rejects your effort setting, use the next level down and say so.
+At max effort, Muse uses many more tokens than the median model and takes longer to answer (report section 2.4, F10). Muse Code's default effort is `high` (`--reasoning-effort` or `/effort`), and the Meta provider rejects `none` (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18). Use high effort for the analysis passes and the fix check. If the host rejects your effort setting, use the next level down and say so.
 
 ## Companion skills
 

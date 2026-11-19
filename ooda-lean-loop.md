@@ -70,7 +70,7 @@ Execute using domain skills — do not invent a new process mid-batch.
 | Code slice | `real-time-testing` RED→GREEN→REFACTOR |
 | Essay section | `academic-writing` TEAL paragraph |
 | Lecture | `plaud-lecture-notes` post-class routine |
-| PR | `cursor-team-kit` → `review-and-ship` |
+| PR | `review-and-ship` |
 
 ### 5. ANDON — stop the line
 

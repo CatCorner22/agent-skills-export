@@ -34,7 +34,7 @@ def front_matter(path):
 
 # Manifests agree on name, version, and description.
 manifests = {p: json.loads((ROOT / p).read_text(encoding="utf-8")) for p in
-             ("plugin.json", ".claude-plugin/plugin.json", ".cursor-plugin/plugin.json", ".devin-plugin/plugin.json", "gemini-extension.json")}
+             ("plugin.json",)}
 for path, data in manifests.items():
     check(data.get("name") == NAME, f"{path}: name must be {NAME}")
     check(re.fullmatch(r"\d+\.\d+\.\d+", str(data.get("version", ""))), f"{path}: version must be semantic")
@@ -43,9 +43,6 @@ check(len({d.get("description") for d in manifests.values()}) == 1, "manifests d
 allowed = {"$schema", "name", "version", "description", "author", "homepage", "repository", "license", "keywords", "extensions"}
 check(set(manifests["plugin.json"]) <= allowed, "plugin.json has fields outside the Agent Plugins schema")
 check(manifests["plugin.json"].get("$schema") == "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", "plugin.json lacks the Agent Plugins $schema")
-for path, key in ((".claude-plugin/plugin.json", "icon"), (".cursor-plugin/plugin.json", "logo")):
-    target = manifests[path].get(key)
-    check(target and (ROOT / target).exists(), f"{path}: {key} file missing")
 
 # Skill follows the Agent Skills specification.
 meta = front_matter(SKILL / "SKILL.md") or {}
@@ -55,7 +52,7 @@ check(name == SKILL.name, "SKILL.md name must match its folder")
 check(re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name) and len(name) <= 64, "SKILL.md name breaks the Agent Skills rules")
 check(0 < len(description) <= 1024, f"SKILL.md description must hold 1-1024 characters (has {len(description)})")
 check(not re.search(r"[<>]", description), "SKILL.md description must not contain angle brackets")
-check(": " not in description, "SKILL.md description must not contain ': ' (some hosts reject it)")
+check(": " not in description, "SKILL.md description must not contain ': '")
 check(len(str(meta.get("compatibility", ""))) <= 500, "compatibility exceeds 500 characters")
 check(len((SKILL / "SKILL.md").read_text(encoding="utf-8").splitlines()) <= 500, "SKILL.md exceeds 500 lines")
 
@@ -87,20 +84,19 @@ for agent in sorted((ROOT / "agents").glob("*.md")):
     data = front_matter(agent) or {}
     check(data.get("name") == agent.stem, f"{agent.name}: name differs from file name")
     check(data.get("description"), f"{agent.name}: needs a description")
-    check(set(data) <= {"name", "description"}, f"{agent.name}: only name and description load in every host (Gemini CLI rejects other keys)")
+    check(set(data) <= {"name", "description"}, f"{agent.name}: an agent file carries only name and description")
     check("S1 Read only" in agent.read_text(encoding="utf-8"), f"{agent.name}: lacks the read-only rule S1")
 for command in sorted((ROOT / "commands").glob("*.md")):
     data = front_matter(command) or {}
     check("description" in data, f"{command.name} lacks a description")
-    check(command.with_suffix(".toml").exists(), f"{command.name} lacks its Gemini .toml")
-try:
-    import tomllib
-    for toml in (ROOT / "commands").glob("*.toml"):
-        data = tomllib.loads(toml.read_text(encoding="utf-8"))
-        check({"description", "prompt"} <= set(data), f"{toml.name}: needs description and prompt")
-        check("{{args}}" in data.get("prompt", ""), f"{toml.name}: prompt lacks {{{{args}}}}")
-except ImportError:
-    pass
+# agents.json: 1 Muse Code custom agent per agent file, inside Muse Code's limits.
+muse_agents = json.loads((ROOT / "agents.json").read_text(encoding="utf-8"))
+check(set(muse_agents) == {p.stem for p in (ROOT / "agents").glob("*.md")}, "agents.json and agents/ name different roles")
+for name_, spec in muse_agents.items():
+    check(re.fullmatch(r"[a-z]+(?:-[a-z]+)*", name_), f"agents.json: {name_} breaks Muse Code's agent-name rule")
+    check(set(spec) <= {"description", "prompt", "model", "effort", "tools", "disallowedTools"}, f"agents.json: {name_} has a key Muse Code rejects")
+    check(spec.get("description") and len(spec["description"].encode("utf-8")) <= 4096, f"agents.json: {name_} description must hold 1-4096 bytes")
+    check(spec.get("prompt"), f"agents.json: {name_} needs a prompt")
 
 build = subprocess.run([sys.executable, str(ROOT / "tools" / "build.py"), "--check"], capture_output=True, text=True)
 check(build.returncode == 0, "generated files are stale; run tools/build.py\n" + build.stdout)

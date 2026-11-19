@@ -210,7 +210,7 @@ Owner: …   Fix: …   Retest: date/result.   Judge note: …
 ```
 
 ## Tooling (LLM / agent targets)
-- `garak` (NVIDIA, Apache-2): `pip install garak`; `garak --target_type <rest|huggingface|openai>
+- `garak` (NVIDIA, Apache-2): `pip install garak`; `garak --target_type <rest|huggingface>
   --target_name <id> --probes <promptinject,dan,leakreplay,...>`; probes ship with
   recommended detectors (built-in attacker/judge split). `garak --list_probes`.
 - `promptfoo redteam` (YAML plugins × strategies incl. prompt-injection, crescendo, GOAT,
@@ -219,7 +219,7 @@ Owner: …   Fix: …   Retest: date/result.   Judge note: …
   converters, scorers, memory DB — mirrors this skill's lane/judge/memory split.
 - **HarmBench** + `cais/HarmBench-Llama-2-13b-cls`; **JailbreakBench** (`JailbreakBench/JBB-Behaviors`).
 - Hugging Face seed corpora: `walledai/TDC23-RedTeaming`, `CohereLabs/aya_redteaming`
-  (multilingual), `Anthropic/hh-rlhf` (red-team-attempts), `TrustAIRLab/in-the-wild-jailbreak-prompts`,
+  (multilingual), `TrustAIRLab/in-the-wild-jailbreak-prompts`,
   `jash-ai/agentic-redteam-benchmark`, `Zhln01/agent_redteam_unified`,
   `Fujitsu/agentic-rag-redteam-bench`, `MMInstruction/RedTeamingVLM`.
 - Judges on HF: `meta-llama/Llama-Guard-3-8B` (lowest FPR in the PAIR judge study),

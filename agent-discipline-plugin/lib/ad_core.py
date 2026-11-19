@@ -61,7 +61,7 @@ def human_size(n):
         if n < 1024 or unit == "TB": return f"{n:.0f} {unit}" if unit == "B" else f"{n:.1f} {unit}"
         n /= 1024.0
 
-# ---------------- hook I/O (Claude Code / Devin hook contract) ----------------
+# ---------------- hook I/O (JSON on stdin; decision JSON on stdout, exit 2 on deny) ----------------
 def read_hook_input():
     """Parse the JSON the host writes to stdin. Returns {} on any problem (fail-open)."""
     try:

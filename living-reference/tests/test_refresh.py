@@ -22,7 +22,7 @@ Last verified: 2026-11-01
 See §10.01 and §77.
 Last verified: 2025-01-01
 ## [90] Sources
-- [S1] Anthropic, Docs (2026). https://example.com/a
+- [S1] Meta, Docs (2026). https://example.com/a
 - [S2] Paper (2025).
 - [S3] Orphan source.
 ## [91] Cite index

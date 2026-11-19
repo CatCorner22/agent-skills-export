@@ -1,60 +1,53 @@
-# Exported skills and plugins
+# Agent skills for Muse Code
 
-36 items. No ZIP. Each `.md` file is 1 skill's `SKILL.md`, renamed to the skill name; to install it, put it in a folder with that name and rename it back to `SKILL.md`. Each folder is a whole skill or plugin with its scripts, templates and manifests.
+36 skills and plugins for Muse Code, in 3 groups: keeping the agent on track, quality checks, and good databases. Each `.md` file at the top level is 1 skill's `SKILL.md`, renamed to the skill's name. Each folder is a whole skill or plugin with its scripts, templates and manifests.
 
-## Exported
+## Install on Muse Code
 
-| # | Item | Category | Source plugin | Source path | What it does |
-|---|---|---|---|---|---|
-| 1 | `hinshitsu-plugin/` | Quality checks | hinshitsu v3.1.0 | `/opt/.devin/plugins_cache/cache/account-upload_user-hinshitsu-c1ff27d2/e9c243b062d284f84ae852fda23c3e9a6f21aea4f0fa11099474959eabdb8d97` | 7-skill quality system: user-approved criteria, red cell, 8 independent auditors, coverage ledger, evidence-cited delivery report and progress gauge. |
-| 2 | `agent-discipline-plugin/` | On track | agent-discipline v1.0.0 | `/opt/.devin/plugins_cache/cache/account-upload_user-agent-discipline-0ef71efe/db261ad633cbdc11b2f451d6f0d3a7e1bab3e13b45d89f4cdc04e299a143e818` | 16 skills plus `ad.py` hooks that keep an agent honest: ask-or-assume, scope/blast-radius check, evidence gates, context checkpoints, narrow reads. |
-| 3 | `chicken-little-overwatch-plugin/` | Quality checks | chicken-little-overwatch v2.0.0 | `/opt/.devin/plugins_cache/cache/account-upload_user-chicken-little-overwatch-plugin-566d8c4a/7629b3503e7e1f8f25c87a4fd668cfe78d44ebe8fa76d04d11b697bbd36b3ed7` | QC and red-team review of AI-made work: requirements, evidence, Adams-style plain language, then an alarm swarm tested by a Defender and Arbiter. |
-| 4 | `rumsfelds-binoculars-plugin/` | Quality checks | rumsfelds-binoculars | `/opt/.devin/plugins_cache/cache/account-upload_user-rumsfelds-binoculars-2036b09a/1e01d82de15980b04c8fc28d9825f7d11e45c82613dd83d8ae696414b8baca09` | Risk reconnaissance: sorts known/unknown knowns and unknowns, then hunts black swans with adversarial models and tail statistics. |
-| 5 | `proactive-agency.md` | On track | first-party | `/opt/.devin/plugins_cache/cache/account-upload_user-first-party-d146813f/b192e52f7ea1b60245f9ba1dbbb599b126de0c206a3b231bec0275da60fd568a/skills/proactive-agency/SKILL.md` | Five-step gate that makes the agent do the work instead of handing tasks back to the user. |
-| 6 | `unblock-yourself.md` | On track | first-party | `/opt/.devin/plugins_cache/cache/account-upload_user-first-party-d146813f/b192e52f7ea1b60245f9ba1dbbb599b126de0c206a3b231bec0275da60fd568a/skills/unblock-yourself/SKILL.md` | When a route is blocked (403, missing tool, failing install), list and try every alternate route before asking. |
-| 7 | `red-team-lead.md` | Quality checks | first-party | `/opt/.devin/plugins_cache/cache/account-upload_user-first-party-d146813f/b192e52f7ea1b60245f9ba1dbbb599b126de0c206a3b231bec0275da60fd568a/skills/red-team-lead/SKILL.md` | Runs an adversarial red-team campaign against a plan, product, prompt, agent or codebase. |
-| 8 | `skill-library-audit/` | Quality checks | first-party | `/opt/.devin/plugins_cache/cache/account-upload_user-first-party-d146813f/b192e52f7ea1b60245f9ba1dbbb599b126de0c206a3b231bec0275da60fd568a/skills/skill-library-audit` | Audits a multi-vendor skill library for routing defects; ships `scripts/audit_skill_library.py`. |
-| 9 | `clean-minimal-code.md` | Quality checks | coding | `/opt/.devin/plugins_cache/cache/account-upload_user-coding-5d3aeb5c/91d6b6aed5b4e7f1341e3005b8590a1c3ec18b668189690992ba32661f349b97/skills/clean-minimal-code/SKILL.md` | Write clear, minimal code: fewer lines, same behavior, established naming. |
-| 10 | `stable-architecture.md` | Quality checks | coding | `/opt/.devin/plugins_cache/cache/account-upload_user-coding-5d3aeb5c/91d6b6aed5b4e7f1341e3005b8590a1c3ec18b668189690992ba32661f349b97/skills/stable-architecture/SKILL.md` | Design code with clear module boundaries and dependency direction so it does not collapse like a house of cards. |
-| 11 | `real-time-testing.md` | Quality checks | coding | `/opt/.devin/plugins_cache/cache/account-upload_user-coding-5d3aeb5c/91d6b6aed5b4e7f1341e3005b8590a1c3ec18b668189690992ba32661f349b97/skills/real-time-testing/SKILL.md` | Test continuously while writing: red-green-refactor, watch mode, typecheck and lint. |
-| 12 | `deliverable-first.md` | On track | coding | `/opt/.devin/plugins_cache/cache/account-upload_user-coding-5d3aeb5c/91d6b6aed5b4e7f1341e3005b8590a1c3ec18b668189690992ba32661f349b97/skills/deliverable-first/SKILL.md` | Define the final deliverable first, then work backward to the plan. |
-| 13 | `ooda-lean-loop.md` | On track | craft | `/opt/.devin/plugins_cache/cache/account-upload_user-craft-ee025b3f/7d948a182fd24af2656bd81ff24864cbfb22e5f14313bcdf5c7da9db0d66682d/skills/ooda-lean-loop/SKILL.md` | Fused OODA and lean loops: observe, orient on a current-state map, decide, act, cut waste. |
-| 14 | `workspace-mise-en-place.md` | On track | craft | `/opt/.devin/plugins_cache/cache/account-upload_user-craft-ee025b3f/7d948a182fd24af2656bd81ff24864cbfb22e5f14313bcdf5c7da9db0d66682d/skills/workspace-mise-en-place/SKILL.md` | Prepare files, folders, env, tools and references before starting work. |
-| 15 | `compound-engineering/` | On track | claude-skills | `/opt/.devin/plugins_cache/cache/account-upload_user-claude-skills-df11c934/8ef789245285f7a3012b5c3264df234c392b260d324235285cd3c2d53982e7cb/skills/compound-engineering` | Brainstorm → plan with definition of done → phased build with checks → senior review → root-cause debug. |
-| 16 | `improve-system.md` | On track | claude-skills | `/opt/.devin/plugins_cache/cache/account-upload_user-claude-skills-df11c934/8ef789245285f7a3012b5c3264df234c392b260d324235285cd3c2d53982e7cb/skills/improve-system/SKILL.md` | Turns feedback and repeated problems into permanent fixes to the project's knowledge base and skills. |
-| 17 | `ingest-source.md` | Good databases | claude-skills | `/opt/.devin/plugins_cache/cache/account-upload_user-claude-skills-df11c934/8ef789245285f7a3012b5c3264df234c392b260d324235285cd3c2d53982e7cb/skills/ingest-source/SKILL.md` | Captures any source (URL, PDF, transcript, file) as a structured, indexed note in a persistent knowledge base. |
-| 18 | `living-reference/` | Good databases | living-reference v1.1.0 | `/opt/.devin/plugins_cache/cache/account-upload_user-living-reference-e3746528/09765109c4c2dafd19789da12a5b9a2628422a50b6c48d26beac1adfefc7d69a/skills/living-reference` | Builds and maintains rule-organized Markdown reference outlines with stable IDs, a sources ledger and regenerated indexes; ships scripts. |
-| 19 | `supabase-postgres-best-practices/` | Good databases | supabase | `/opt/.devin/plugins_cache/cache/account-upload_user-supabase-b928718d/5c451242b15f6d8d7c86d8900b3936c5d7303604d2d7b5e2c66ed8a91411d6ca/skills/supabase-postgres-best-practices` | Postgres schema, index, query and config best practices (works on any Postgres, not only Supabase). |
-| 20 | `internal-focus-group.md` | Quality checks | claude-skills | `/opt/.devin/plugins_cache/cache/account-upload_user-claude-skills-df11c934/8ef789245285f7a3012b5c3264df234c392b260d324235285cd3c2d53982e7cb/skills/internal-focus-group/SKILL.md` | Tests a draft on simulated personas of the real recipients before it ships. |
-| 21 | `review-and-ship.md` | Quality checks | cursor-team-kit | `/opt/.devin/plugins_cache/cache/account-upload_user-cursor-team-kit-74451dc6/461fe21003214d837e8efe7ced1ef2423b74924b36b5a7e09db52f4157752e4b/skills/review-and-ship/SKILL.md` | Reviews the branch for bugs, intent fit and test coverage, runs or writes tests, then commits and opens a PR. |
-| 22 | `ai-transfer-quality-control.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/ai-transfer-quality-control/SKILL.md` | Router for the 9 quality-control techniques below. |
-| 23 | `double-entry-claims.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/double-entry-claims/SKILL.md` | Every factual claim must carry paired evidence, or it is cut. |
-| 24 | `pipeline-preflight.md` | On track | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/pipeline-preflight/SKILL.md` | Pre-run audit that inputs, files, constraints and tools are present; halt instead of running cold. |
-| 25 | `progressive-resistance-critique.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/progressive-resistance-critique/SKILL.md` | Escalating self-critique passes: consistency, alignment, robustness, failure. |
-| 26 | `chain-of-custody-provenance.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/chain-of-custody-provenance/SKILL.md` | Tracks which inputs, tools and turns produced each part of an output. |
-| 27 | `sterile-cockpit-context.md` | On track | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/sterile-cockpit-context/SKILL.md` | Phase-gated context: parse inputs, work with full history, then validate before landing. |
-| 28 | `five-whys-failure-recovery.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/five-whys-failure-recovery/SKILL.md` | On failure, drill five whys to root cause and log a permanent fix. |
-| 29 | `journalistic-attribution.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/journalistic-attribution/SKILL.md` | Retrieve evidence per claim before writing; attribute inline. |
-| 30 | `survey-triangulation.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/survey-triangulation/SKILL.md` | Requires three independent retrieval paths per fact and scores agreement. |
-| 31 | `proofreading-marks.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/proofreading-marks/SKILL.md` | Annotation pass (QUERY, DELETE, STET, INSERT) between draft and delivery. |
-| 32 | `stress-test-robustness.md` | Quality checks | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/stress-test-robustness/SKILL.md` | Contradiction, edge-case, adversarial and scope tests on a draft before delivery. |
-| 33 | `after-action-review.md` | On track | ai-transfer | `/opt/.devin/plugins_cache/cache/account-upload_user-ai-transfer-6250ceae/e6e6cd4812fb3cc3a654542718f7b1de68b07fb1f8061e2a425fa38c3751d869/skills/after-action-review/SKILL.md` | Debrief after a task: intended vs actual vs gap vs fix, logged for patterns. |
-| 34 | `mscd-contracts/` | Quality checks | user-supplied (mscd-contracts.zip), Muse-optimized | `/home/ubuntu/attachments/c664a17a-1871-4293-8d59-9ac8c85dff9d/mscd-contracts.zip` | Reviews, redlines, comments on and drafts contracts to Adams's MSCD5 in Blake's house style; lint, coverage and rule-query scripts; `adapters/muse.md` adds Muse run rules. |
-| 35 | `one-way-optimal-language/` | Quality checks | user-supplied (one-way-optimal-language.zip), Muse-optimized | `/home/ubuntu/attachments/e2156890-e2f8-4bf2-8aa4-86eeb5abdf14/one-way-optimal-language.zip` | Drafts and reviews one-way medical, dental, pharmacy and research text: active voice, R1-R30 ambiguity rubric, plain language; `scripts/av_scan.py`; `adapters/muse.md` adds Muse run rules. |
-| 36 | `unambiguous-language/` | Quality checks | user-supplied (unambiguous-language-muse.zip), Muse form | `/home/ubuntu/attachments/54084492-57b1-4161-ad27-4ba033b72e44/unambiguous-language-muse.zip` | Blake's always-on language rules: active voice, "might" for possibility, and 3 lists of ambiguous words and MSCD usages with replacements; Muse run rules. |
+- **A folder skill:** `muse skills install ./<folder> --scope user` for every project, or copy the folder to `<repo>/.agents/skills/<folder>/` for 1 repository. Check it first with `muse skills validate ./<folder>`.
+- **A single `.md` file:** make a folder with the skill's name, put the file in it, rename the file `SKILL.md`, and install the folder as above.
+- **A plugin folder** (the 4 folders that end in `-plugin`): its `README.md` gives the steps. Install each folder under its `skills/` folder as a skill.
+- **An always-on skill:** Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. For a skill that must apply to every reply, such as `unambiguous-language`, add 1 line to `AGENTS.md`, which Muse Code loads at the start of every session.
 
-## Found but left out
+Nobody has run these skills on Muse Code yet. The Muse-specific steps come from Meta's Muse Code documentation (https://dev.meta.ai/docs/muse-code, read 2026-11-18).
 
-| Group | Why left out |
-|---|---|
-| `precog-verify`, `precog-personas` (`/home/ubuntu/repos/precog/.claude/skills/`) | Precog-specific (as you said). |
-| `precog-logged-out-ui-testing`, `knotty-browser-qa` (plugin `default`) | Precog- and Knotty/coaching-specific. |
-| `colorado-home-search`, `psychedelic-medicine-expert`, `pioneer-llm` | Project-specific. |
-| `muse-guardrails` (8 skills) | Written for Meta Muse models only. |
-| Vendor packs: vercel (34), huggingface (26), adobe (9), langchain (12), supabase `supabase`, pydantic-ai, cursor-sdk, cursor-cloud, playwright, plaud, microsoft365 | Tied to one product or platform. |
-| claude-skills finance/Oracle skills (about 55) | Accounting, tax and Oracle domain work, not agent discipline. |
-| Other ai-transfer techniques (about 40) | Style, pacing and memory techniques outside quality control. |
-| General but other purposes: smart-brevity, exhaustive-research, investigative-research, evidence-based-ui-design, statistical-literacy, ethics-code-suite, deep-data-analysis, prompt-optimizer, ui/ux-engineering, academic pack | General-purpose, but writing, research or design rather than staying on track, databases or quality checks. Ask and I will add any. |
-| Devin System Skills | Built-in Devin skills, not yours. |
+## Contents
 
-No `~/.claude/skills`, `~/.cursor/skills` or `~/.agents/skills` folders exist on this machine. The only repo skills folder is `precog/.claude/skills`. Your other plugins live in the Devin plugin cache under `/opt/.devin/plugins_cache/cache/`.
+| Item | Group | What it does |
+|---|---|---|
+| `after-action-review.md` | On track | Debrief after a task: intended vs actual vs gap vs fix, logged for patterns. |
+| `agent-discipline-plugin/` | On track | 16 skills plus `ad.py` hooks that keep an agent honest: ask-or-assume, scope/blast-radius check, evidence gates, context checkpoints, narrow reads. |
+| `compound-engineering/` | On track | Brainstorm → plan with definition of done → phased build with checks → senior review → root-cause debug. |
+| `deliverable-first.md` | On track | Define the final deliverable first, then work backward to the plan. |
+| `improve-system.md` | On track | Turns feedback and repeated problems into permanent fixes to the project's knowledge base and skills. |
+| `ooda-lean-loop.md` | On track | Fused OODA and lean loops: observe, orient on a current-state map, decide, act, cut waste. |
+| `pipeline-preflight.md` | On track | Pre-run audit that inputs, files, constraints and tools are present; halt instead of running cold. |
+| `proactive-agency.md` | On track | Five-step gate that makes the agent do the work instead of handing tasks back to the user. |
+| `sterile-cockpit-context.md` | On track | Phase-gated context: parse inputs, work with full history, then validate before landing. |
+| `unblock-yourself.md` | On track | When a route is blocked (403, missing tool, failing install), list and try every alternate route before asking. |
+| `workspace-mise-en-place.md` | On track | Prepare files, folders, env, tools and references before starting work. |
+| `ai-transfer-quality-control.md` | Quality checks | Router for the 9 quality-control techniques below. |
+| `chain-of-custody-provenance.md` | Quality checks | Tracks which inputs, tools and turns produced each part of an output. |
+| `chicken-little-overwatch-plugin/` | Quality checks | QC and red-team review of AI-made work: requirements, evidence, Adams-style plain language, then an alarm swarm tested by a Defender and Arbiter. |
+| `clean-minimal-code.md` | Quality checks | Write clear, minimal code: fewer lines, same behavior, established naming. |
+| `double-entry-claims.md` | Quality checks | Every factual claim must carry paired evidence, or it is cut. |
+| `five-whys-failure-recovery.md` | Quality checks | On failure, drill five whys to root cause and log a permanent fix. |
+| `hinshitsu-plugin/` | Quality checks | 7-skill quality system: user-approved criteria, red cell, 8 independent auditors, coverage ledger, evidence-cited delivery report and progress gauge. |
+| `internal-focus-group.md` | Quality checks | Tests a draft on simulated personas of the real recipients before it ships. |
+| `journalistic-attribution.md` | Quality checks | Retrieve evidence per claim before writing; attribute inline. |
+| `mscd-contracts/` | Quality checks | Reviews, redlines, comments on and drafts contracts to Adams's MSCD5 in Blake's house style; lint, coverage and rule-query scripts; `adapters/muse.md` adds Muse run rules. |
+| `one-way-optimal-language/` | Quality checks | Drafts and reviews one-way medical, dental, pharmacy and research text: active voice, R1-R30 ambiguity rubric, plain language; `scripts/av_scan.py`; `adapters/muse.md` adds Muse run rules. |
+| `progressive-resistance-critique.md` | Quality checks | Escalating self-critique passes: consistency, alignment, robustness, failure. |
+| `proofreading-marks.md` | Quality checks | Annotation pass (QUERY, DELETE, STET, INSERT) between draft and delivery. |
+| `real-time-testing.md` | Quality checks | Test continuously while writing: red-green-refactor, watch mode, typecheck and lint. |
+| `red-team-lead.md` | Quality checks | Runs an adversarial red-team campaign against a plan, product, prompt, agent or codebase. |
+| `review-and-ship.md` | Quality checks | Reviews the branch for bugs, intent fit and test coverage, runs or writes tests, then commits and opens a PR. |
+| `rumsfelds-binoculars-plugin/` | Quality checks | Risk reconnaissance: sorts known/unknown knowns and unknowns, then hunts black swans with adversarial models and tail statistics. |
+| `skill-library-audit/` | Quality checks | Audits a multi-vendor skill library for routing defects; ships `scripts/audit_skill_library.py`. |
+| `stable-architecture.md` | Quality checks | Design code with clear module boundaries and dependency direction so it does not collapse like a house of cards. |
+| `stress-test-robustness.md` | Quality checks | Contradiction, edge-case, adversarial and scope tests on a draft before delivery. |
+| `survey-triangulation.md` | Quality checks | Requires three independent retrieval paths per fact and scores agreement. |
+| `unambiguous-language/` | Quality checks | Blake's always-on language rules: active voice, "might" for possibility, and 3 lists of ambiguous words and MSCD usages with replacements; Muse run rules. |
+| `ingest-source.md` | Good databases | Captures any source (URL, PDF, transcript, file) as a structured, indexed note in a persistent knowledge base. |
+| `living-reference/` | Good databases | Builds and maintains rule-organized Markdown reference outlines with stable IDs, a sources ledger and regenerated indexes; ships scripts. |
+| `supabase-postgres-best-practices/` | Good databases | Postgres schema, index, query and config best practices (works on any Postgres, not only Supabase). |

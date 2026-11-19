@@ -23,16 +23,14 @@ SKILLS = {
     "hinshitsu-gauge": [24],
 }
 REQUIRED_FILES = [
-    "README.md", "plugin.json", ".claude-plugin/plugin.json",
+    "README.md", "plugin.json",
     "skills/hinshitsu/GLOSSARY.md", "skills/hinshitsu/EXAMPLE.md",
     "templates/MINDMAP.md", "templates/CONNECTIONS.md",
     "templates/AUDIT-LOG.md", "templates/COVERAGE-LEDGER.md", "templates/DELIVERY-REPORT.md",
     "templates/FRAMEWORK.md", "templates/SESSION-STATE.md",
-    "INSTALL.md", "chat/claude/hinshitsu-claude/SKILL.md", "chat/chatgpt/hinshitsu-chatgpt/SKILL.md",
-    "chat/chatgpt/PASTE-IN.md", "codex/README.md", "codex/install.py", "scripts/package.py", "scripts/hinshitsu_check.py", "scripts/hinshitsu_log.py", "scripts/hinshitsu_text.py", "scripts/lint.py",
+    "scripts/hinshitsu_check.py", "scripts/hinshitsu_log.py", "scripts/hinshitsu_text.py", "scripts/lint.py",
     "skills/hinshitsu-gauge/scripts/gauge.py",
-    "adapters/claude-code.md", "adapters/cursor.md", "adapters/devin.md",
-    "adapters/codex.md", "adapters/gemini.md", "adapters/kimi.md", "adapters/muse.md",
+    "adapters/muse.md",
 ]
 REQUIRED_FILES += ["templates/roles/%s.md" % role for role in (
     "auditor-adversarial", "auditor-best-practices", "auditor-correctness", "auditor-forensic-5s",
@@ -48,7 +46,7 @@ RECONCILIATION DECISION TRACE LAUNCH FINDING RESOLUTION OVERRULE PROBE CHECK COM
 ABANDONED ROLLBACK WAIVER CORRECTION DELIVERY LESSON LESSONS PASS FAIL FIXED WITHDRAWN OVERRULED
 PROPOSED FROZEN CORE FULL SWARM ACCEPTED REJECTED REDACTED
 TODO FIXME SKILL GLOSSARY MINDMAP CONNECTIONS AUDIT-LOG COVERAGE-LEDGER FRAMEWORK
-SESSION-STATE DELIVERY-REPORT GAUGE EXAMPLE README TESTING CHANGELOG LICENSE AGENTS CLAUDE GEMINI
+SESSION-STATE DELIVERY-REPORT GAUGE EXAMPLE README TESTING CHANGELOG LICENSE AGENTS
 YAML JSON SVG URL UTC SHA-256 SHA CLI IDE API SDK MCP MIT USNG ID IDS OK N/A STOPPED COR FOR BP
 ADV RX DRIFT LANG RED RSV STAB DELIVERED ASSUMED TYPE AI VA""".split())
 # Literal values of more than 1 word. Each is matched whole, so that its words alone define nothing.
@@ -91,8 +89,6 @@ def lint(root):
     for rel in REQUIRED_FILES:
         if not (root / rel).is_file():
             err(rel, "required file is missing (C1)")
-    if (root / "adapters/perplexity.md").exists():
-        err("adapters/perplexity.md", "adapter for a surface that fails the swarm test (E-006)")
 
     gpath = root / "skills/hinshitsu/GLOSSARY.md"
     terms = glossary_terms(gpath.read_text(encoding="utf-8")) if gpath.is_file() else []
@@ -181,7 +177,7 @@ def lint(root):
         if re.search(r"^\d+\. .*\bmust\b", text, re.M):
             err(rel, "holds a numbered rule; adapters map tools and copy no rule (C6)")
 
-    for rel in ("plugin.json", ".claude-plugin/plugin.json"):
+    for rel in ("plugin.json",):
         p = root / rel
         if p.is_file():
             try:

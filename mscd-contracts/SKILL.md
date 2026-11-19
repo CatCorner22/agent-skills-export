@@ -1,6 +1,6 @@
 ---
 name: mscd-contracts
-description: "Review, redline (real Word tracked changes), comment on, proofread, and draft business contracts to Kenneth A. Adams's A Manual of Style for Contract Drafting (MSCD, 5th edition), as updated by his blog, in Blake Reagan's house style (active voice, digits, I./A./1./(a)/(i) numbering, Schedule A and Exhibit 1, cross-references by heading, no article before party names). Use it whenever Blake asks to review, mark up, redline, edit, tighten, fix, comment on, or draft any contract, agreement, amendment, NDA, clause, definition, or term sheet; whenever he asks about shall, will, may, must, should, efforts, active voice, ambiguity, vagueness, defined terms, recitals, numbering, dates, numbers, or schedules and exhibits; and whenever he pastes contract language and asks what's wrong with it, even in a 1-line question that doesn't name MSCD. Load it before the docx skill or a search of Project files. Not for deal or legal-risk advice on its own, or for writing that isn't contract language."
+description: "Review, redline (real Word tracked changes), comment on, proofread, and draft business contracts to Kenneth A. Adams's A Manual of Style for Contract Drafting (MSCD, 5th edition), as updated by his blog, in Blake Reagan's house style (active voice, digits, I./A./1./(a)/(i) numbering, Schedule A and Exhibit 1, cross-references by heading, no article before party names). Use it whenever Blake asks to review, mark up, redline, edit, tighten, fix, comment on, or draft any contract, agreement, amendment, NDA, clause, definition, or term sheet; whenever he asks about shall, will, may, must, should, efforts, active voice, ambiguity, vagueness, defined terms, recitals, numbering, dates, numbers, or schedules and exhibits; and whenever he pastes contract language and asks what's wrong with it, even in a 1-line question that doesn't name MSCD. Load it before the docx skill or a search of the workspace. Not for deal or legal-risk advice on its own, or for writing that isn't contract language."
 ---
 
 # MSCD contracts
@@ -14,7 +14,7 @@ This skill makes contract language say 1 thing, clearly, the way Ken Adams's *A 
 
 Blake wants to understand the mechanics of every fix, so every internal finding explains the grammar or reasoning behind it, not just the replacement wording. A finding counts only if its fix is right: the fix solves the problem, follows MSCD and the house rules, keeps the deal's meaning, and creates no new problem.
 
-**On Muse** (Muse Code, Muse Spark, Muse Wonder, or the Meta Model API), read `adapters/muse.md` before Stage 1. It maps this skill's tools to Muse. It also adds run rules for Muse's known failure modes: abstaining instead of ruling, drifting after compaction, looping, and calling a tool that never ran.
+**Every run:** read `adapters/muse.md` before Stage 1. It maps this skill's tools to Muse. It also adds run rules for Muse's known failure modes: abstaining instead of ruling, drifting after compaction, looping, and calling a tool that never ran.
 
 ## Precedence: which source wins
 
@@ -33,7 +33,7 @@ When sources conflict, follow the 1st one that addresses the point, and say in t
 
 Run the scripts by their full path inside this skill's folder (for example, `python3 <skill folder>/scripts/mscd_lint.py`), because the working folder usually isn't the skill's. They run on Python 3.11 to 3.13 (tested). The lint uses python-docx when it is installed and falls back to a plain reader without it.
 
-The MSCD Project's knowledge files hold the same 1,338 rule records and the same blog sweep as `data/rules.jsonl`. Use this skill's scripts and references instead of searching those files; open a Project file only for a passage the rule database doesn't cover.
+`data/rules.jsonl` holds 1,338 rule records and the blog sweep. Use this skill's scripts and references for every rule; if the workspace holds the MSCD5 text, open it only for a passage the rule database doesn't cover.
 
 | File | Read it when |
 |---|---|
@@ -57,7 +57,7 @@ The MSCD Project's knowledge files hold the same 1,338 rule records and the same
 | `scripts/mscd_lint.py` | Pass 0, on every document, and on every fix you write (Stage 2b, test 1). `--inventory` adds the defined-term inventory |
 | `scripts/coverage.py` | Before delivering a review, redline, or comment set: lists every lint direct finding your work doesn't account for (Stage 2b) |
 | `scripts/rules_query.py` | To pull a rule's full record (test, fix, exceptions, verified book examples) by id, word, or paragraph |
-| `adapters/muse.md` | Every run on Muse, before Stage 1 |
+| `adapters/muse.md` | Every run, before Stage 1 |
 
 The reference files list every rule as 1 entry with its id; pull the full record with `rules_query.py --id` when you need the test, exceptions, or the book's own example. Reading the rule record is how you avoid citing a rule wrongly. The reference files are large (`words-to-avoid.md` and `verbs.md` are over 100 KB): read each file's header, then search it (grep, or `rules_query.py --word`) for the words in front of you rather than reading it whole. Book examples, fixes, and rule statements are in MSCD style; restate them in house style before you use them (digits, active voice, *Schedule A*, no article before a party name).
 
@@ -68,7 +68,7 @@ Ask only what you can't infer; if Blake isn't there to answer, use the default a
 | Question | Default |
 |---|---|
 | Whose draft is it: Blake's, or the other side's? | Either way, full MSCD conformance (Blake's rule: "We need to start educating people"), with 1 exception: on the other side's draft, keep their *represents and warrants* and suggest the remedies-neutral sentence in a comment (3.459-3.463); on Blake's draft, use *states* for every statement of fact, a statement of future fact included, and conform every *represents and warrants* to it, a stray one included (house rule 10). On the other side's draft, separate changes that affect meaning from style changes, so the other side sees what matters first. If nobody knows whose draft it is, treat it as the other side's and pass `--whose other-side` to the lint (it is the more cautious choice: it doesn't rewrite a verb the drafter may have chosen on purpose), and say so |
-| Which mode, and what output? | Review → a report in the host's Docs tool (a Claude doc on claude.ai); if no Docs tool is available, or if Blake names a file, a .md or .docx file in the working folder; Redline or Comment → the .docx; Draft → .docx. A pasted clause or a short question → answer in the reply, with no file, and keep the answer in proportion to the question: the rewritten clause first, then 1 short entry per change (what changed and the grammar or rule behind it, with its source), then any decision Blake must make. Leave out severity labels and the rest of the finding fields unless he asks for a full review. For a short question, run the lint on the clause (no `--inventory`), read the rule record of each change, lint your fixed wording, and run the 6 tests in `fix-check.md` yourself; skip `findings.json`, `coverage.py`, and the subagent check |
+| Which mode, and what output? | Review → a .md or .docx report in the working folder (the file Blake names, if he names one); Redline or Comment → the .docx; Draft → .docx. A pasted clause or a short question → answer in the reply, with no file, and keep the answer in proportion to the question: the rewritten clause first, then 1 short entry per change (what changed and the grammar or rule behind it, with its source), then any decision Blake must make. Leave out severity labels and the rest of the finding fields unless he asks for a full review. For a short question, run the lint on the clause (no `--inventory`), read the rule record of each change, lint your fixed wording, and run the 6 tests in `fix-check.md` yourself; skip `findings.json`, `coverage.py`, and the subagent check |
 | Governing law, and kind of deal | Ask; if unknown, U.S. law, general commercial, and say so. English or Commonwealth law changes the advice on *represents and warrants*, efforts, and *calendar month* (3.416-3.450; 8.50-8.63; 10.102); the house rules still apply |
 | Who reads the comments? | Blake (internal form). Use the external form when Blake says the comments go to the other side (`comment-templates.md`) |
 | Tracked-change author | `Blake's AI Agent`, with comment initials `BAR-AI` (Blake Alan Reagan's AI agent; never BAA, which in healthcare law means a business associate agreement) |
@@ -129,7 +129,7 @@ Record each finding in this form (it feeds every mode):
 Write the report in the form in `comment-templates.md`: a short summary, then findings sorted by severity and location, with wording cleanup, ambiguity fixes, and substantive changes kept apart. Group a repeated finding into 1 row with all its locations.
 
 ### Redline
-Use the docx skill's workflow for editing an existing document (read its SKILL.md: "Editing existing documents", "Tracked changes" and "Comments"; find its folder from the skill listing; on claude.ai it is usually `/mnt/skills/public/docx`; on Muse, see `adapters/muse.md`).
+Use the docx skill's workflow for editing an existing document (read its SKILL.md: "Editing existing documents", "Tracked changes" and "Comments"; find its folder with `muse skills list`; `adapters/muse.md` covers a workspace without it).
 
 1. Work on a copy; never modify Blake's original. Unzip it, strip symlinks, and run the docx skill's `merge_runs.py`, as that workflow says.
 2. Make only changes whose meaning is certain. Where a fix needs a choice of meaning or a business term, leave the text, insert a bracketed blank if needed, and put the options in a comment.
@@ -184,7 +184,7 @@ Anchor 1 comment to the exact words of each finding with the docx skill's `scrip
 
 ## Refreshing the knowledge
 
-The knowledge is current through Adams's blog post of October 22, 2026. When Blake asks to refresh, or a question turns on a recent change: read every post published since that date in the blog's Categories of Contract Language and Ambiguity archives (not only the newest), classify each as rider, proposal, or elaboration, add riders to `data/rules.jsonl` and `references/riders.md` (steps in `references/rule-database.md`), and run `scripts/build_references.py`. Never apply a proposal as a rule. Make the change in the skill's master copy (the GitHub repository CatCorner22/Cursor_Skills, `skills/legal/mscd-contracts`), not in an installed copy, then repackage.
+The knowledge is current through Adams's blog post of October 22, 2026. When Blake asks to refresh, or a question turns on a recent change: read every post published since that date in the blog's Categories of Contract Language and Ambiguity archives (not only the newest), classify each as rider, proposal, or elaboration, add riders to `data/rules.jsonl` and `references/riders.md` (steps in `references/rule-database.md`), and run `scripts/build_references.py`. Never apply a proposal as a rule. Make the change in the skill's master copy (the GitHub repository CatCorner22/agent-skills-export, `mscd-contracts/`), not in an installed copy, then reinstall it.
 
 ## Limits to state honestly
 

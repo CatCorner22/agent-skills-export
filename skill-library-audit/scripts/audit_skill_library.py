@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-audit_skill_library.py — a static analyzer for Cursor/Claude-style skill libraries.
+audit_skill_library.py — a static analyzer for Agent Skills libraries (SKILL.md folders).
 
 WHY THIS IS NOT A LINTER
 ========================
@@ -17,7 +17,7 @@ So the right tooling borrows from four disciplines rather than from style checki
   (a) INFORMATION RETRIEVAL. A description term's value as a trigger is inversely
       proportional to how many skills use it — that is exactly IDF. "test", "build",
       "agent", "api", "deploy" in 20/89 descriptions carry near-zero discriminative
-      power; "@cursor/sdk" or "ZeroGPU" in 1/89 carry maximal power. This turns
+      power; "ZeroGPU" in 1/89 carries maximal power. This turns
       "that description is too greedy" from a vibe into a computable score.
 
   (b) STATIC ANALYSIS / COMPILERS. Dead-guard detection is unreachable-code analysis.
@@ -197,9 +197,6 @@ PRODUCT_ALIASES = {
     "aws": ["aws", "sagemaker", "boto3"],
     "gcp": ["google cloud", "gcp"],
     "azure": ["azure"],
-    "openai": ["openai", "@ai-sdk/openai"],
-    "anthropic": ["anthropic", "@anthropic-ai/"],
-    "google-ai": ["gemini", "@ai-sdk/google"],
     "huggingface": ["huggingface", "hugging face", "@huggingface/"],
     "replicate": ["replicate"],
     "modal": ["modal.com"],
@@ -212,7 +209,6 @@ PRODUCT_ALIASES = {
     "playwright": ["playwright"],
     "cypress": ["cypress"],
     "adobe": ["adobe", "app builder", "appbuilder"],
-    "cursor": ["cursor"],
     "stripe": ["stripe"],
     "sentry": ["sentry"],
     "datadog": ["datadog"],
@@ -264,7 +260,7 @@ a an and are as at be been but by can could do does doing for from had has have 
 how i if in into is it its me more most no nor not of on once only or other our out over own
 same she should so some such than that the their them then there these they this those to too
 under until up use used uses using very was we were what when where which while who whom why
-will with would you your yours skill skills claude cursor
+will with would you your yours skill skills muse
 """.split())
 
 
@@ -1012,7 +1008,7 @@ class Library:
         guard built on it can never fire.
 
         An earlier version built this from import/require/install sites only. That was
-        too strict: `@ai-sdk/openai` is named in a dozen messages and prose lines in this
+        too strict: an SDK package was named in a dozen messages and prose lines in this
         library but never in a demonstrated import, and it was wrongly flagged.
         """
         nonguard_lines, guard_lines = [], []
@@ -1741,7 +1737,7 @@ def detect_greedy_descriptions(lib):
 
     # A description that explicitly claims prompts which do NOT contain the skill's own
     # anchor is greedy by construction, whatever its IDF profile says. This is the one
-    # shape the reviewed library itself treats as a defect: `cursor-sdk` shipped
+    # shape the reviewed library itself treats as a defect: an SDK skill shipped
     # "even if they don't explicitly name the package" and the maintainers replaced that
     # clause with a scope boundary. Detecting the shape directly is far more reliable
     # than inferring it from term statistics.
@@ -2353,7 +2349,7 @@ def detect_dead_guards(lib):
             #   - a scoped package `@scope/name`, which is unambiguous, and
             #   - a pure-alphabetic kebab identifier (>=2 segments, no digits, no dots),
             #     which is the shape of a skill name or a plain npm package.
-            # Model IDs (`gemini-3.1-flash-image-preview`), code fragments
+            # Model IDs (`muse-spark-1.2`), code fragments
             # (`function handleSubmit`) and path fragments (`app/layout.`) are excluded:
             # they are not names whose existence this analyzer can reason about.
             def checkable(lit):
@@ -3043,7 +3039,7 @@ def render_json(lib, findings, min_severity, stats):
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="audit_skill_library.py",
-        description="Audit a Cursor/Claude skill library for routing-table and "
+        description="Audit an Agent Skills library for routing-table and "
                     "retrieval-index defects.")
     parser.add_argument("root", help="path to the skills/ root directory")
     parser.add_argument("--json", action="store_true", dest="as_json",

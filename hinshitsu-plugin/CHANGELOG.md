@@ -2,6 +2,10 @@
 
 Rule 20.3 requires 1 entry for each amendment of a skill. Newest first.
 
+## 3.1.0-muse — 2026-11-18
+
+- Muse Code edition: Muse Code is the only supported surface. Removed the other surfaces' adapters and manifest and `scripts/package.py`, which built packages for them. `adapters/muse.md` now cites Meta's Muse Code pages for each capability. The run checker reads an identifier as Muse Code prints it, with no prefix rule. `scripts/lint.py` requires the files of this edition only.
+
 ## 3.1.0 — 2026-11-18
 
 Answer to the proof run under 3.0.0 (`build-record/audits/round4-proof-run.md`): 5 SUB-AGENT runs and 4 cards for a change of 102 lines, no failed CRITERION in 3 audits, and the run still ended `DELIVERED — NOT DONE`, because each re-audit raised new faults and 2 AUDITORS classed as BLOCKER a fault the USER had set aside. The USER chose this version, with no further paid run. No independent session has reviewed it, and no run has been made under it.
@@ -14,8 +18,6 @@ Answer to the proof run under 3.0.0 (`build-record/audits/round4-proof-run.md`):
 - Rule 0.5: the TIER counts the DELIVERABLE only; the USER may hold a run at `CORE`.
 - `scripts/hinshitsu_log.py`: an entry may hold its own number, as rule 1.6 requires of a report's file name. `scripts/hinshitsu_check.py`: an `ANSWER` that states a higher number of planned runs raises the budget whenever it is written. Merged from the proof run: the gauge leaves a FINDING with a refused ID out of the `STOPPED` line and counts it as unread. 165 tests.
 
-- App-specific files: 2 single-assistant skills for ordinary Claude chat and ordinary ChatGPT (`chat/`), with a report checker and a paste-in form; `adapters/chatgpt.md` renamed `adapters/codex.md`; `INSTALL.md`; `scripts/package.py` and `dist/` with 3 zip files. 187 tests. None was run on its surface.
-- `dist/hinshitsu-codex.zip` (the USER's request): the 7 skills in the layout Codex reads (`.agents/skills`), with `install.py` for 1 project or for the user's home folder. 9 tests (195 in all). Never run on Codex.
 
 Open: the friction items of the 2 real runs that this list does not answer (`runs/*/FRICTION.md`).
 
@@ -61,7 +63,7 @@ Amendments made after round 2 of the independent review, on commit `874ffb2` (`b
 - Rule 14.3: the exit for a past act needs the `CORRECTION` entry and a new SUB-AGENT; the final AUDITOR checks the `Summary`.
 - Rule 16.7: 1 AUDITOR receives the WORK UNIT and the copy, unlabelled; a FINDING on the planted defect closes as `WITHDRAWN` and cites the seeder's report.
 - The 6 other skills: without a conductor run a skill produces no verdict.
-- Adapters for Gemini CLI, Kimi Code CLI and Muse Code: the same install line as the other 4.
+- Adapter for Muse Code.
 - Checker: with Status `DONE`, fails when the final audit's last line does not read "passed", when no `TIER` entry states the planned SUB-AGENT runs, when `LAUNCH` entries exceed that number with no `ANSWER`, and when the newest `CRITERIA` entry lists no CRITERION; fails a BLOCKER closed as a record fault or by a report older than the FINDING; reads `DEGRADED` with any separator; reads CRITERION IDs written in bold or code marks. 8 tests added (70 in all).
 - `EXAMPLE.md` states that the example predates the amendments and that the amended checker prints 1 failure on it.
 - Rules made testable (auditor finding 1): 0.4 (a `yes` cites EVIDENCE), 0.6 (the clock command is named; times do not decrease), 0.7 (the start entry states the hash of the conductor and the glossary), 1.7 (a second run in a role needs a prior entry with the reason), 6.1, 7.3 (a `CHECK` entry before each WORK UNIT), 8.1 (`git cat-file -e`), 8.2 (25 log entries, not 25 tool calls), 16.4 (the limit is stated in the `CAPABILITY` entry), 16.7 (actor named), 17.3, 17.6, 21.2 (each DEGRADED pass has a scope and a `LAUNCH` entry).
@@ -69,7 +71,7 @@ Amendments made after round 2 of the independent review, on commit `874ffb2` (`b
 - Rule 23.10: the budget card of rule 0.9 is among the cards allowed after S6.
 - Rule 5 preamble (`hinshitsu-challenge`): the order of rule 1.5.
 - Checker: reads a log that opens with the probe's `LAUNCH` entry; tests paths no higher than the root of the repository; prints 1 `FAIL` line where it printed a traceback. Gauge: prints 1 message where it printed a traceback. 71 tests.
-- `adapters/cursor.md` and `README.md`: 1 install statement in all places. `adapters/devin.md`: the count of runs is the log's (33) and cites the log.
+- `README.md`: 1 install statement in all places.
 - `EXAMPLE.md`: 2 citations corrected; the cold-start transcript is copied to `example/cold-start-transcript.md`.
 - `build-record/DELIVERY-REPORT.md`: rewritten; 3 statements in it were false after the USER's answer (auditor finding 17).
 

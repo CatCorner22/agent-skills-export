@@ -40,7 +40,7 @@ def completion_gate_decide(last_message, strict=True):
     return None
 
 def last_assistant_text(inp):
-    """Claude Code Stop hook gives transcript_path; read the last assistant message. Fallback: inp['last_message']."""
+    """A Stop hook input may give transcript_path; read the last assistant message. Fallback: inp['last_message']."""
     if inp.get("last_message"): return inp["last_message"]
     tp = inp.get("transcript_path")
     if tp and os.path.isfile(tp):

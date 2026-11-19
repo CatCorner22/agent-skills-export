@@ -13,7 +13,7 @@ Vendors have confirmed infra bugs that degraded output for weeks; users also mis
 ## Procedure
 1. `ad.py regress init` (once) → `.agent/regress/set.json`, 12 items with prompt, expected behavior, fail signals. Edit it: add your own recurring cases (e.g. "check project files before download").
 2. `ad.py regress show` → run each prompt against the model under test in a **fresh** session with your standard rules/skills loaded.
-3. Score strictly: pass = expected behavior and no fail signal; partial = right action, wrong form; fail otherwise. `ad.py regress record F1-inventory pass "claude-opus-4.1 (2026-11-10)" --note "searched project first"`.
+3. Score strictly: pass = expected behavior and no fail signal; partial = right action, wrong form; fail otherwise. `ad.py regress record F1-inventory pass "muse-spark-1.2 (2026-11-10)" --note "searched project first"`.
 4. `ad.py regress report` → scoreboard by model/date.
 
 ## Reading the board

@@ -152,7 +152,7 @@ class TestProvenance(Base):
 
 class TestRules(Base):
     def test_lint_compile_rewrite(self):
-        p = self.write("CLAUDE.md", "# Rules\n- Never run rm -rf on any directory.\n- Don't force-push.\n- Be careful with migrations.\n- Never use tabs.\n" + "- filler\n" * 160)
+        p = self.write("AGENTS.md", "# Rules\n- Never run rm -rf on any directory.\n- Don't force-push.\n- Be careful with migrations.\n- Never use tabs.\n" + "- filler\n" * 160)
         r = self.rl.lint_rules(p)
         self.assertTrue(any(">150" in f for f in r["findings"])); self.assertEqual({h["label"] for h in r["hooks"]}, {"recursive delete", "force push"})
         self.assertTrue(any("vague" in f for f in r["findings"])); self.assertTrue(any("no hook equivalent" in f for f in r["findings"]))
@@ -161,7 +161,7 @@ class TestRules(Base):
         out = self.cli("deny-regex", r"git\s+push\s+.*--force", stdin=json.dumps({"tool_name": "Bash", "tool_input": {"command": "git push --force"}}))
         self.assertEqual(out.returncode, 2)
     def test_find_rule_files(self):
-        self.write("AGENTS.md", "x"); self.write("sub/.cursorrules", "y"); self.assertEqual(len(self.rl.find_rule_files(self.tmp)), 2)
+        self.write("AGENTS.md", "x"); self.write("sub/.agents/AGENTS.md", "y"); self.write("sub/notes.md", "z"); self.assertEqual(len(self.rl.find_rule_files(self.tmp)), 2)
 
 class TestImpactAndRegress(Base):
     def test_test_impact_mapping(self):
@@ -171,8 +171,8 @@ class TestImpactAndRegress(Base):
         self.assertIn("pyproject", self.rl.test_impact(["pyproject.toml"], self.tmp)["full_suite_reason"])
     def test_regress_roundtrip(self):
         self.rg.regress_init(); self.assertIn("F1-inventory", self.rg.regress_show())
-        self.rg.regress_record("F1-inventory", "pass", "claude-x"); self.rg.regress_record("F7-evidence", "fail", "claude-x", "said done")
-        rep = self.rg.regress_report(); self.assertIn("claude-x: 1/12", rep); self.assertIn("fail", rep)
+        self.rg.regress_record("F1-inventory", "pass", "muse-spark-x"); self.rg.regress_record("F7-evidence", "fail", "muse-spark-x", "said done")
+        rep = self.rg.regress_report(); self.assertIn("muse-spark-x: 1/12", rep); self.assertIn("fail", rep)
         with self.assertRaises(SystemExit): self.rg.regress_record("F1-inventory", "meh", "m")
 
 class TestFailOpen(Base):

@@ -11,8 +11,7 @@ ten minutes or any data, it lives in State or Enforcement, not Guidance.
 
 ## Layout
 ```
-.devin-plugin/plugin.json      plugin manifest (hooks → ./hooks/hooks.json)
-hooks/hooks.json               Claude-format hooks: SessionStart/PostCompact reinject, PreToolUse guards, PostToolUse log+trim, Stop gate
+hooks/hooks.json               hooks for Muse Code's .muse/hooks.json: SessionStart/PostCompact reinject, PreToolUse guards, PostToolUse log+trim, Stop gate
 lib/ad.py                      one CLI + hook entrypoint (stdlib only, Python ≥3.8); lib/ad_*.py modules
 skills/<name>/SKILL.md         16 skills (see table)
 tests/test_ad.py               31 tests incl. hook stdin/stdout contract and fail-open behaviour
@@ -43,9 +42,12 @@ python3 lib/ad.py manifest record data/genome.cram --summary "Nebula WGS, 412 MB
 python3 lib/ad.py fetch-check "curl -O https://…/genome.cram"   # → denied, points at the manifest entry
 python3 -m unittest discover tests
 ```
-Hooks run automatically under Claude Code / Devin when the plugin is installed. Any other host (Cursor, Gemini CLI,
-Codex, Windsurf) can call the same CLI from its own hook/wrapper mechanism; every hook reads host JSON on stdin and
-writes the Claude decision JSON (plus exit 2 on deny).
+Install on Muse Code:
+1. Install each folder under `skills/` with `muse skills install <folder> --scope project`, or copy it to `<repo>/.agents/skills/<name>/`.
+2. Copy `hooks/hooks.json` to `<repo>/.muse/hooks.json` and replace every `__AD_ROOT__` with the absolute path of this folder. Muse Code runs hook commands with a cleared environment, so a path variable won't reach them. Project hooks run only after you trust the workspace.
+3. Start a new session; Muse Code loads hooks at startup. It warns about any event, matcher, or handler it doesn't support and skips that entry, so read the startup warnings and fix the tool names in each `matcher` to match Muse Code's tools.
+
+UNVERIFIED: nobody has run these hooks on Muse Code. Meta documents the hook events (SessionStart, PreToolUse, PostToolUse, PostCompact, Stop and others) and the file location, not the input JSON (https://dev.meta.ai/docs/muse-code/extending, read 2026-11-18). Every hook reads JSON on stdin and writes a decision JSON on stdout, plus exit 2 on deny; check that contract with one PreToolUse hook before you rely on the rest. Without hooks, call the same CLI (`python3 lib/ad.py …`) yourself.
 
 ## Design guarantees
 - Fail-open on internal error (a broken hook never bricks the agent) — except destructive patterns, which fail closed.

@@ -45,39 +45,22 @@ All 7 share 1 glossary: [`skills/hinshitsu/GLOSSARY.md`](skills/hinshitsu/GLOSSA
 
 hinshitsu runs only where the main agent can start a sub-agent, write that sub-agent's whole scope, and get its report back whole with an identifier. The conductor tests this with a live call at the start of every run; a runtime that fails the test stops and asks the user.
 
-| Surface | Adapter | Tested in this repository |
+| Surface | Adapter | Run on this surface |
 |---|---|---|
-| Devin | [`adapters/devin.md`](adapters/devin.md) | yes: the worked example ran here |
-| Claude Code | [`adapters/claude-code.md`](adapters/claude-code.md) | no |
-| Cursor | [`adapters/cursor.md`](adapters/cursor.md) | no |
-| Codex and ChatGPT Work | [`adapters/codex.md`](adapters/codex.md) | no |
-| Gemini CLI | [`adapters/gemini.md`](adapters/gemini.md) | no |
-| Kimi Code CLI | [`adapters/kimi.md`](adapters/kimi.md) | no |
-| Muse Code CLI | [`adapters/muse.md`](adapters/muse.md) | no |
+| Muse Code | [`adapters/muse.md`](adapters/muse.md) | no |
 
-An adapter that was never run on its surface says so in its first line. Each adapter gives the install steps for its surface and a dated link to the vendor's page for each capability it states.
+The adapter says on its first line that nobody has run it on Muse Code yet. It gives the install steps and a dated link to Meta's page for each capability it states.
 
-### Ordinary chat: 2 single-assistant skills
-
-Ordinary Claude chat and ordinary ChatGPT cannot start a sub-agent, so the 7 skills do not run there. Each has its own skill, which keeps the gap hunt (baby bird), the requirements the user approves before work starts, evidence for every claim, and a report that states what was checked. It never reports an independent check: its best status is `DELIVERED — SELF-CHECKED`.
-
-| Surface | Skill | Upload | Tested in this repository |
-|---|---|---|---|
-| Claude chat (claude.ai and the apps) | [`chat/claude/hinshitsu-claude/`](chat/claude/hinshitsu-claude/SKILL.md) | [`dist/hinshitsu-claude.zip`](dist/hinshitsu-claude.zip) | no |
-| ChatGPT (chatgpt.com and the apps) | [`chat/chatgpt/hinshitsu-chatgpt/`](chat/chatgpt/hinshitsu-chatgpt/SKILL.md); without Skills, [`chat/chatgpt/PASTE-IN.md`](chat/chatgpt/PASTE-IN.md) | [`dist/hinshitsu-chatgpt.zip`](dist/hinshitsu-chatgpt.zip) | no |
-
-[`INSTALL.md`](INSTALL.md) gives the steps for each of the 9 surfaces. `python3 scripts/package.py dist` writes the 4 zip files; [`dist/hinshitsu-codex.zip`](dist/hinshitsu-codex.zip) holds the 7 skills in the layout Codex reads, with an installer.
-
-**Not supported:** the Gemini app, kimi.com chat and the Meta AI app, which do not let the main agent scope a sub-agent and for which no single-assistant skill is written. Perplexity has no adapter: its Computer product starts sub-agents itself, and its documentation shows no way for the main agent to write each one's scope.
+**Not supported:** the Meta AI app and meta.ai, where the model starts sub-agents itself and nobody writes their scope.
 
 ## Install
 
-The repository is a plugin. `plugin.json` at the root is the manifest in the Agent Plugins format; `.claude-plugin/plugin.json` is the manifest Claude Code reads. The skills are the folders under `skills/`. Each adapter states how its surface installs the plugin. A copy of the skill folders alone is not a supported install.
+The folder is a plugin. `plugin.json` at the root is its manifest. The skills are the folders under `skills/`. `adapters/muse.md` states how Muse Code installs it. A copy of the skill folders alone is not a supported install, because the skills need `scripts/`, `templates/` and the glossary.
 
 ## How to tell a real run from a claimed one
 
 1. Open the run's `DELIVERY-REPORT.md`. It opens with 3 checks that take 5 minutes and need no terminal.
-2. Open any report under the run's `audits/` folder. Its first line is an identifier the platform issued. On Devin it is a session link that opens.
+2. Open any report under the run's `audits/` folder. Its first line is the identifier Muse Code issued for the subagent run. Compare it with `/subagents` or the session record from `muse export`.
 3. Run `python3 scripts/hinshitsu_check.py --stage delivery <run-folder>`. It tests the form of the record: numbering, custody, closed findings, cited evidence. It does not prove that any check ran, and it says so.
 
 ## Worked example
@@ -92,7 +75,7 @@ To use the example page: open [`skills/hinshitsu/example/index.html`](skills/hin
 |---|---|
 | `skills/` | the 7 skills, the glossary, the gauge script, the worked example |
 | `templates/` | blank forms for each artifact, and 1 scope per sub-agent role under `templates/roles/` |
-| `adapters/` | 1 runtime mapping per supported surface |
+| `adapters/` | the Muse Code tool mapping |
 | `scripts/lint.py` | checks the form of the skills, adapters and manifests |
 | `scripts/hinshitsu_check.py` | checks the form of a run folder |
 | `tests/` | unit tests for the 2 scripts and the gauge |

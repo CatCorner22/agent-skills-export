@@ -6,8 +6,8 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes come from t
 
 ## Install
 
-- Install the whole `one-way-optimal-language` folder, so `scripts/av_scan.py` sits beside `SKILL.md`.
-- Muse Code doesn't always surface project skills: in 1 bug report, skills didn't appear on Muse threads (t3code#19155). So add 1 line to the project's `AGENTS.md`: "Before drafting, reviewing, or rewriting any medical, dental, pharmacy, or research text for patients or providers, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
+- Install the whole `one-way-optimal-language` folder with `muse skills install ./one-way-optimal-language --scope user`, or copy it to `<repo>/.agents/skills/one-way-optimal-language/`, so `scripts/av_scan.py` sits beside `SKILL.md`. Check it first with `muse skills validate ./one-way-optimal-language`.
+- Muse Code loads a skill when someone invokes it or when its skill-recall observer surfaces it. To load this skill every time, add 1 line to the project's `AGENTS.md`: "Before drafting, reviewing, or rewriting any medical, dental, pharmacy, or research text for patients or providers, read `<skill folder>/SKILL.md` and `<skill folder>/adapters/muse.md` and follow them."
 - Check the install: `python3 <skill folder>/scripts/av_scan.py <a file that holds "The dose was changed.">` must print 1 hit and exit with status 1.
 
 ## Tool mapping
@@ -31,7 +31,7 @@ UNVERIFIED: nobody has run this skill on Muse yet. The failure modes come from t
 
 ## Effort
 
-At max effort, Muse uses many more tokens than the median model and takes longer to answer (report section 2.4, F10). At least 1 harness rejects `reasoning_effort=max` (hermes#140813). Use high effort. If the host rejects your effort setting, use the next level down and say so.
+At max effort, Muse uses many more tokens than the median model and takes longer to answer (report section 2.4, F10). Muse Code's default effort is `high` (`--reasoning-effort` or `/effort`), and the Meta provider rejects `none` (https://dev.meta.ai/docs/muse-code/configuration, read 2026-11-18). Use high effort. If the host rejects your effort setting, use the next level down and say so.
 
 ## Companion skills
 

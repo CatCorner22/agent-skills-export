@@ -1,13 +1,10 @@
 ---
 name: rules-hygiene
-description: "Keep instruction files (CLAUDE.md, AGENTS.md, .cursorrules, GEMINI.md, copilot-instructions.md) lean: under ~150 lines, positive phrasing, task-specific sections moved to on-demand skills, hard constraints moved to hooks — because context files cost ~20% more tokens per task and do not raise success rates. Use when creating or editing such a file, when the agent ignores rules, or when a repo's rules file has grown past a screen. Tooling: `ad.py rules lint`. Scope boundary: converting negatives → `negative-constraint-compiler`."
+description: "Keep instruction files (AGENTS.md at any level, including .agents/AGENTS.md) lean: under ~150 lines, positive phrasing, task-specific sections moved to on-demand skills, hard constraints moved to hooks — because context files cost ~20% more tokens per task and do not raise success rates. Use when creating or editing such a file, when the agent ignores rules, or when a repo's rules file has grown past a screen. Tooling: `ad.py rules lint`. Scope boundary: converting negatives → `negative-constraint-compiler`."
 metadata:
   priority: 5
   pathPatterns:
-    - '**/CLAUDE.md'
     - '**/AGENTS.md'
-    - '**/.cursorrules'
-    - '**/copilot-instructions.md'
 ---
 # Rules hygiene
 
